@@ -8,6 +8,7 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - service.yaml
+  - cloudflared.yaml
   # Needs the Tailscale Kubernetes operator (installed in the `tailscale` namespace).
   - tailscale-ingress.yaml
 
@@ -19,3 +20,11 @@ images:
 
 # The secret round-trip-secrets is NOT here: it must not live in git (the repo is public).
 # See secret.example.yaml and README.md.
+
+# Generated rather than declared: kustomize suffixes the name with a content hash, so a routing
+# change renames the ConfigMap, which changes the pod's volume and restarts cloudflared (it only
+# reads its configuration at start).
+configMapGenerator:
+  - name: cloudflared
+    files:
+      - config.yaml=cloudflared-config.yaml

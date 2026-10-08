@@ -31,12 +31,47 @@ Same flow as larouedugras: GitHub Actions builds the image into GHCR, records th
    No GitHub secret is needed: it uses the run's `GITHUB_TOKEN`. If `main` requires pull
    requests, allow the bot to bypass it so the tag commit can land.
 
+## Public access for the phone (Cloudflare tunnel + bearer token)
+
+The phone does not need Tailscale: a dedicated tunnel publishes only `GET /departures` at
+`round-trip.gauthiercpx.dev` (the zone must be in the same Cloudflare account as the tunnel; change the hostname in
+`cloudflared-config.yaml` to use another). `/healthz` and `/readyz` are not routed. The backend refuses every
+`/departures` request without `Authorization: Bearer <API_TOKEN>`, and refuses all of them when no
+token is configured.
+
+1. Create the tunnel and its DNS record, from a machine that has `cloudflared`:
+
+       cloudflared tunnel login
+       cloudflared tunnel create round-trip
+       cloudflared tunnel route dns round-trip round-trip.gauthiercpx.dev
+
+2. Give the cluster the tunnel key (it is not committed):
+
+       kubectl -n round-trip create secret generic cloudflared-credentials \
+         --from-file=credentials.json=$HOME/.cloudflared/<tunnel-id>.json
+
+3. Create the API token in the existing secret. This generates it and stores it without printing it:
+
+       kubectl -n round-trip patch secret round-trip-secrets --type merge \
+         -p "{\"stringData\":{\"API_TOKEN\":\"$(openssl rand -base64 32)\"}}"
+
+   Read it once to type into the app's settings screen:
+
+       kubectl -n round-trip get secret round-trip-secrets -o jsonpath='{.data.API_TOKEN}' | base64 -d
+
+4. Restart the backend so it picks the token up:
+
+       kubectl -n round-trip rollout restart deploy/round-trip-backend
+
+To rotate the token, repeat steps 3 and 4 and update the app.
+
 ## Verify
 
     kubectl -n round-trip rollout status deploy/round-trip-backend
     kubectl -n round-trip port-forward svc/round-trip-backend 8080:80
     curl localhost:8080/healthz
-    curl 'localhost:8080/departures?stops=star-metro:5074'
+    curl -H "Authorization: Bearer $TOKEN" 'localhost:8080/departures?stops=star-metro:5074'
+    curl -i 'https://round-trip.gauthiercpx.dev/departures?stops=star-metro:5074'   # expect 401
 
 Over the tailnet use `https://round-trip.<tailnet>.ts.net`; that HTTPS address is what the
 Android app needs. The ingress status shows the exact name:
