@@ -10,7 +10,9 @@ import io.ktor.client.HttpClient
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.client.request.HttpRequestData
+import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.request.get
+import io.ktor.client.request.header
 import io.ktor.client.statement.HttpResponse
 import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpHeaders
@@ -28,7 +30,7 @@ import kotlin.test.assertTrue
 
 class RoutesTest {
     private val clock = MutableClock(Fixtures.SAMPLE_TIME)
-    private val config = AppConfig(primApiKey = "dummy-test-key", port = 0)
+    private val config = AppConfig(primApiKey = "dummy-test-key", apiToken = TEST_TOKEN, port = 0)
 
     /** Stands in for PRIM and STAR, answering with the saved samples. Never touches the network. */
     private class FakeUpstreams {
@@ -71,6 +73,11 @@ class RoutesTest {
         application { roundTripModule(appConfig, service) }
     }
 
+    /** A client that sends the bearer token, as the app does. */
+    private fun ApplicationTestBuilder.authed() = createClient {
+        defaultRequest { header(HttpHeaders.Authorization, "Bearer $TEST_TOKEN") }
+    }
+
     private suspend fun HttpResponse.departures(): DeparturesResponse =
         Json.decodeFromString(DeparturesResponse.serializer(), bodyAsText())
 
@@ -96,7 +103,7 @@ class RoutesTest {
 
     @Test
     fun readyzReturns503NamingTheMissingKey() = testApplication {
-        startApp(appConfig = AppConfig(primApiKey = null, port = 0))
+        startApp(appConfig = AppConfig(primApiKey = null, apiToken = TEST_TOKEN, port = 0))
 
         val response = client.get("/readyz")
 
@@ -108,7 +115,7 @@ class RoutesTest {
     fun departuresReturnsOneFreshResultPerStopInRequestOrder() = testApplication {
         startApp()
 
-        val body = client.get("/departures?stops=star-metro:5074,idfm:58572").departures()
+        val body = authed().get("/departures?stops=star-metro:5074,idfm:58572").departures()
 
         assertEquals(listOf("star-metro:5074", "idfm:58572"), body.stops.map { it.stopId })
         assertEquals(listOf(StopState.FRESH, StopState.FRESH), body.stops.map { it.state })
@@ -118,7 +125,7 @@ class RoutesTest {
     fun departuresAreSortedAndCappedPerStop() = testApplication {
         startApp()
 
-        val prim = client.get("/departures?stops=idfm:58572").departures().stops.single()
+        val prim = authed().get("/departures?stops=idfm:58572").departures().stops.single()
 
         // The Magenta sample has 65 visits; the earliest leaves at 11:56:23.
         assertEquals(DepartureService.MAX_DEPARTURES_PER_STOP, prim.departures.size)
@@ -129,7 +136,7 @@ class RoutesTest {
     fun primCallCarriesApiKeyHeaderAndStopAreaReference() = testApplication {
         startApp()
 
-        client.get("/departures?stops=idfm:58572")
+        authed().get("/departures?stops=idfm:58572")
 
         val request = fake.primRequests().single()
         assertEquals("dummy-test-key", request.headers["apikey"])
@@ -140,7 +147,7 @@ class RoutesTest {
     fun starQueryFiltersOnTheValidatedStopId() = testApplication {
         startApp()
 
-        client.get("/departures?stops=star-metro:5074")
+        authed().get("/departures?stops=star-metro:5074")
 
         val parameters = fake.requests.single().url.parameters
         assertEquals("idarret=\"5074\"", parameters["where"])
@@ -152,7 +159,7 @@ class RoutesTest {
     fun invalidStopsReturn400WithoutCallingUpstreams() = testApplication {
         startApp()
 
-        val response = client.get("/departures?stops=sncf:87271007")
+        val response = authed().get("/departures?stops=sncf:87271007")
 
         assertEquals(HttpStatusCode.BadRequest, response.status)
         assertTrue(fake.requests.isEmpty())
@@ -162,9 +169,9 @@ class RoutesTest {
     fun repeatedRequestWithinTtlIsServedFromCache() = testApplication {
         startApp()
 
-        client.get("/departures?stops=idfm:58572")
+        authed().get("/departures?stops=idfm:58572")
         clock.advanceBy(Duration.ofSeconds(59))
-        val body = client.get("/departures?stops=idfm:58572").departures()
+        val body = authed().get("/departures?stops=idfm:58572").departures()
 
         assertEquals(StopState.FRESH, body.stops.single().state)
         assertEquals(1, fake.primRequests().size)
@@ -173,11 +180,11 @@ class RoutesTest {
     @Test
     fun upstreamErrorWithWarmCacheServesStaleDepartures() = testApplication {
         startApp()
-        client.get("/departures?stops=idfm:58572")
+        authed().get("/departures?stops=idfm:58572")
         clock.advanceBy(Duration.ofSeconds(61))
         fake.primStatus = HttpStatusCode.InternalServerError
 
-        val result = client.get("/departures?stops=idfm:58572").departures().stops.single()
+        val result = authed().get("/departures?stops=idfm:58572").departures().stops.single()
 
         assertEquals(StopState.STALE, result.state)
         assertEquals(Fixtures.SAMPLE_TIME, result.fetchedAt)
@@ -189,7 +196,7 @@ class RoutesTest {
         startApp()
         fake.primStatus = HttpStatusCode.InternalServerError
 
-        val body = client.get("/departures?stops=idfm:58572,star-metro:5074").departures()
+        val body = authed().get("/departures?stops=idfm:58572,star-metro:5074").departures()
 
         assertEquals(listOf(StopState.UNAVAILABLE, StopState.FRESH), body.stops.map { it.state })
         assertEquals(emptyList(), body.stops.first().departures)
@@ -197,9 +204,9 @@ class RoutesTest {
 
     @Test
     fun missingPrimKeyMakesIdfmStopsUnavailableWithoutCallingPrim() = testApplication {
-        startApp(appConfig = AppConfig(primApiKey = null, port = 0))
+        startApp(appConfig = AppConfig(primApiKey = null, apiToken = TEST_TOKEN, port = 0))
 
-        val result = client.get("/departures?stops=idfm:58572").departures().stops.single()
+        val result = authed().get("/departures?stops=idfm:58572").departures().stops.single()
 
         assertEquals(StopState.UNAVAILABLE, result.state)
         assertTrue(fake.primRequests().isEmpty())
@@ -226,12 +233,67 @@ class RoutesTest {
                 clock = clock,
             ),
         )
-        client.get("/departures?stops=idfm:58572")
+        authed().get("/departures?stops=idfm:58572")
         clock.advanceBy(Duration.ofSeconds(61))
 
-        val result = client.get("/departures?stops=idfm:58572").departures().stops.single()
+        val result = authed().get("/departures?stops=idfm:58572").departures().stops.single()
 
         assertEquals(StopState.STALE, result.state)
         assertEquals(1, fake.primRequests().size)
+    }
+
+    @Test
+    fun departuresWithoutATokenReturn401AndNeverCallUpstreams() = testApplication {
+        startApp()
+
+        val response = client.get("/departures?stops=idfm:58572")
+
+        assertEquals(HttpStatusCode.Unauthorized, response.status)
+        assertEquals("Bearer", response.headers[HttpHeaders.WWWAuthenticate])
+        assertTrue(fake.requests.isEmpty())
+    }
+
+    @Test
+    fun departuresWithAWrongTokenReturn401() = testApplication {
+        startApp()
+
+        val response = client.get("/departures?stops=idfm:58572") {
+            header(HttpHeaders.Authorization, "Bearer not-the-token")
+        }
+
+        assertEquals(HttpStatusCode.Unauthorized, response.status)
+    }
+
+    @Test
+    fun departuresAreRefusedWhenTheServerHasNoTokenConfigured() = testApplication {
+        startApp(appConfig = AppConfig(primApiKey = "dummy-test-key", apiToken = null, port = 0))
+
+        val response = client.get("/departures?stops=idfm:58572") {
+            header(HttpHeaders.Authorization, "Bearer $TEST_TOKEN")
+        }
+
+        assertEquals(HttpStatusCode.Unauthorized, response.status)
+    }
+
+    @Test
+    fun probeEndpointsStayOpenWithoutAToken() = testApplication {
+        startApp()
+
+        assertEquals(HttpStatusCode.OK, client.get("/healthz").status)
+        assertEquals(HttpStatusCode.OK, client.get("/readyz").status)
+    }
+
+    @Test
+    fun readyzNamesTheMissingApiToken() = testApplication {
+        startApp(appConfig = AppConfig(primApiKey = "dummy-test-key", apiToken = null, port = 0))
+
+        val response = client.get("/readyz")
+
+        assertEquals(HttpStatusCode.ServiceUnavailable, response.status)
+        assertTrue("API_TOKEN" in response.bodyAsText())
+    }
+
+    private companion object {
+        const val TEST_TOKEN = "dummy-test-token"
     }
 }

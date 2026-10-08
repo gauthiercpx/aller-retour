@@ -1,0 +1,15 @@
+tunnel: round-trip
+credentials-file: /etc/cloudflared/creds/credentials.json
+metrics: 0.0.0.0:2000
+grace-period: 30s
+
+ingress:
+  # The only public route: the departures endpoint, exact path. /healthz and /readyz are not
+  # routed, so they stay invisible from the Internet (the cluster probes reach the pod directly).
+  # The backend still requires the bearer token on this path.
+  - hostname: round-trip.gauthiercpx.dev
+    path: ^/departures$
+    service: http://round-trip-backend:80
+
+  # Required by cloudflared: the fallback rule must come last.
+  - service: http_status:404

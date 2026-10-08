@@ -40,6 +40,12 @@ spec:
                   name: round-trip-secrets
                   key: PRIM_API_KEY
                   optional: true   # lets the pod start (live, unready) before the secret exists
+            - name: API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: round-trip-secrets
+                  key: API_TOKEN
+                  optional: true   # same: unready (and /departures refuses everyone) until it is set
           resources:
             requests:
               cpu: 50m

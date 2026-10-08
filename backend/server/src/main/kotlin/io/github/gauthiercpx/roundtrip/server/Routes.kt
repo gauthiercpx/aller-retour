@@ -1,5 +1,6 @@
 package io.github.gauthiercpx.roundtrip.server
 
+import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
@@ -36,6 +37,11 @@ fun Application.roundTripModule(config: AppConfig, service: DepartureService) {
         }
 
         get("/departures") {
+            if (!isAuthorized(call.request.headers[HttpHeaders.Authorization], config.apiToken)) {
+                call.response.headers.append(HttpHeaders.WWWAuthenticate, "Bearer")
+                call.respond(HttpStatusCode.Unauthorized, ErrorBody("Unauthorized"))
+                return@get
+            }
             val stops = try {
                 parseStopIds(call.request.queryParameters["stops"])
             } catch (e: InvalidStopsException) {
