@@ -2,4 +2,19 @@
     <string name="app_name">Round Trip</string>
     <string name="widget_description">Next departures for your commute</string>
     <string name="widget_empty">No departures yet</string>
+    <string name="widget_updated">Updated %1$s</string>
+    <string name="widget_cancelled">Cancelled</string>
+    <string name="widget_delay_minutes">+%1$d min</string>
+
+    <string name="settings_intro">Add the widget from your home screen, then tell the app where the backend is and which stops to watch.</string>
+    <string name="settings_base_url">Backend URL</string>
+    <string name="settings_base_url_hint">https://round-trip.your-tailnet.ts.net</string>
+    <string name="settings_morning_stops">Morning stops (before 12:00)</string>
+    <string name="settings_evening_stops">Evening stops (from 12:00)</string>
+    <string name="settings_stops_hint">idfm:58572, star-metro:5074</string>
+    <string name="settings_save_and_refresh">Save and refresh</string>
+    <string name="settings_error_base_url">Use a full https address, for example https://host.your-tailnet.ts.net</string>
+    <string name="settings_status_refreshed">Departures updated.</string>
+    <string name="settings_status_saved_not_configured">Saved. Add a backend URL and at least one stop for the current time of day to fetch departures.</string>
+    <string name="settings_status_failed">Could not refresh: %1$s</string>
 </resources>

@@ -9,7 +9,7 @@ Backend work is tracked on `feat/backend-mvp` and is out of scope here.
 | Phase | State |
 |---|---|
 | 0. Foundation (Gradle, convention plugins, theme, CI) | Done, verified locally |
-| 1. MVP widget | Next |
+| 1. MVP widget | Built, gate green; not yet run on a device |
 | 2 to 8 | Planned below |
 
 ## Stack (from the `claude-android-ninja` skill)
@@ -22,23 +22,25 @@ Versions are pinned in `gradle/libs.versions.toml`. Build logic is in `build-log
 
 ## Modules
 
-```
-:app           entry point, manifest, widget receivers, WorkManager wiring, DI graph
-:core:model    pure Kotlin. Departure and friends: the backend wire contract
-:core:ui       theme (STAR red / IDFM blue), shared composables, widget styling
-```
-
-Added when a phase needs them, following the skill's dependency direction
-(feature -> core, never feature -> feature):
+Built (phase 0 and 1):
 
 ```
-:core:network    HTTP client for the backend            (phase 1)
-:core:data       repositories, widget state cache       (phase 1)
-:core:datastore  settings: base URL, places, pinned trip (phase 1/2)
-:core:database   Room 3: tap log, habit stats           (phase 3)
-:core:domain     context engine, ranking, commute state machine (phase 2)
-:feature:arrival Rive arrival overlay                   (phase 6)
-:feature:settings places, stops, base URL               (phase 2)
+:app             entry point, manifest, widget + worker, settings screen, DI graph
+:core:model      pure Kotlin. Departure and friends: the backend wire contract
+:core:domain     pure Kotlin. Time slot, stop plan, validation, upcoming-departure selection
+:core:network    Retrofit client for the backend
+:core:datastore  Preferences DataStore: settings and last response
+:core:data       DeparturesRepository
+:core:ui         theme (STAR red / IDFM blue)
+```
+
+Still to come, following the skill's dependency direction (feature -> core, never feature -> feature):
+
+```
+:core:database   Room 3: tap log, habit stats                        (phase 3)
+:core:domain     grows: context engine, ranking, commute state machine (phase 2)
+:feature:arrival Rive arrival overlay                                (phase 6)
+:feature:settings places and stops UI, moved out of :app             (phase 2)
 ```
 
 Widgets are not a feature module: Glance receivers stay in `:app` and read only from the
@@ -57,15 +59,26 @@ The app sends stop IDs only, never coordinates (privacy rule in CLAUDE.md).
 Each phase ends with the local gate (below) green and a short manual check on the device.
 
 ### 1. MVP widget
-- `:core:network`: client for `/departures`, base URL from DataStore (default empty, set in
-  settings; no key ever ships in the APK).
-- `:core:data`: repository that fetches, stores the last `DeparturesResponse` with
-  `generatedAt`, and exposes it as a Flow. Honour `StopState` (FRESH / STALE / UNAVAILABLE).
-- `DeparturesWidget` (Glance): next 2 departures, absolute times ("14:32"), line badge in the
-  data's `lineColor` with a fallback, STALE shown quietly, refresh on tap.
-- WorkManager periodic refresh at the 15 minute floor, `updateAll` on success.
-- City and time-of-day pick the stop list (static config until phase 2).
-- Tests: repository with a fake API, widget state mapping, `Departure` serialization (exists).
+Built. How it works:
+- `:core:domain` (pure Kotlin): `timeSlotOf` (before 12:00 is MORNING, else EVENING), `StopPlan`,
+  stop-list and https-URL validation, `selectUpcoming` (next N departures, tolerates a 1 minute
+  grace so a just-left train does not vanish between 15 minute refreshes).
+- `:core:network`: Retrofit `GET /departures?stops=a,b`, failures mapped to `BackendException`.
+- `:core:datastore`: one Preferences DataStore holding the settings and the last response, so
+  the widget still has content offline. An unreadable cached payload counts as empty.
+- `:core:data`: `DeparturesRepository.refresh()` fetches the stops planned for the current slot;
+  a failed fetch keeps the old snapshot.
+- `:app`: Hilt, `RefreshWorker` (15 minute periodic work, scheduled only while a widget exists;
+  tap triggers a unique one-time refresh), Glance widget showing 2 departures with line badge,
+  destination, absolute time, delay note and an "Updated HH:mm" footer, and a settings screen
+  (backend URL, morning stops, evening stops).
+- The city is implied by the stop ids (`idfm:`, `star-metro:`, `star-bus:`); phase 2 replaces the
+  time-slot rule with real context.
+- A failed fetch is not retried with backoff; the next period is the retry (battery).
+- Tests: 52 unit tests across domain, network (MockWebServer), datastore, repository, formatting.
+
+Still to do before calling the phase done: install on the phone, add the widget, and check it
+against the real backend (needs the backend URL and your stop ids).
 
 ### 2. Context engine
 - Places (home, work, uni, Rennes, Paris) and stops of interest in DataStore.
