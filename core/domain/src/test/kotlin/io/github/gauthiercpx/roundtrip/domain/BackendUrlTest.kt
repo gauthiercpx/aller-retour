@@ -21,6 +21,18 @@ class BackendUrlTest {
     }
 
     @Test
+    fun acceptsCleartextOnLoopbackForLocalDevelopment() {
+        assertEquals("http://localhost:8080/", normalizeBackendUrl("http://localhost:8080"))
+        assertEquals("http://127.0.0.1:8080/", normalizeBackendUrl("http://127.0.0.1:8080/"))
+    }
+
+    @Test
+    fun rejectsCleartextOnLookalikeHosts() {
+        assertNull(normalizeBackendUrl("http://localhost.evil.example"))
+        assertNull(normalizeBackendUrl("http://192.168.1.10:8080"))
+    }
+
+    @Test
     fun rejectsMissingHost() {
         assertNull(normalizeBackendUrl("https://"))
     }

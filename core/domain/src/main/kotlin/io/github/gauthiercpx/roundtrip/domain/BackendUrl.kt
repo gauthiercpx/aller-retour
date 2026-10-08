@@ -4,8 +4,10 @@ import java.net.URI
 import java.net.URISyntaxException
 
 /**
- * Returns the backend base URL with a trailing slash, or null when it is not a plain `https` origin or path.
+ * Returns the backend base URL with a trailing slash, or null when it is not an `https` origin or path.
  * Cleartext is rejected on purpose: Android blocks it by default, and the Tailscale endpoint is served over TLS.
+ * The one exception is a loopback host, used with `adb reverse` against a backend on the dev machine; release
+ * builds still refuse the connection because only the debug build permits cleartext.
  */
 fun normalizeBackendUrl(raw: String): String? {
     val trimmed = raw.trim()
@@ -18,7 +20,12 @@ private fun parseUri(raw: String): URI? = try {
     null
 }
 
-private fun URI.isUsableBackend(): Boolean = scheme.equals("https", ignoreCase = true) &&
+private val LOOPBACK_HOSTS = setOf("localhost", "127.0.0.1")
+
+private fun URI.isAllowedScheme(): Boolean = scheme.equals("https", ignoreCase = true) ||
+    (scheme.equals("http", ignoreCase = true) && host in LOOPBACK_HOSTS)
+
+private fun URI.isUsableBackend(): Boolean = isAllowedScheme() &&
     !host.isNullOrEmpty() &&
     userInfo == null &&
     query == null &&
