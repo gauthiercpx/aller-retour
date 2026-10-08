@@ -5,7 +5,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.glance.ColorFilter
 import androidx.glance.GlanceModifier
+import androidx.glance.Image
+import androidx.glance.ImageProvider
 import androidx.glance.LocalContext
 import androidx.glance.appwidget.cornerRadius
 import androidx.glance.background
@@ -15,7 +18,9 @@ import androidx.glance.layout.Box
 import androidx.glance.layout.Column
 import androidx.glance.layout.Row
 import androidx.glance.layout.Spacer
+import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.padding
+import androidx.glance.layout.size
 import androidx.glance.layout.width
 import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
@@ -36,6 +41,7 @@ import java.time.Instant
 import java.time.ZoneId
 
 private const val ROWS_SHOWN = 2
+private val ROW_GAP = 12.dp
 
 private val TextPrimary = ColorProvider(day = Ink, night = Paper)
 private val TextMuted = ColorProvider(day = Slate, night = Color(0xFFA9B1BC))
@@ -73,37 +79,55 @@ private fun DepartureRow(item: UpcomingDeparture, zone: ZoneId) {
         else -> delayMinutes(departure)?.let { context.getString(R.string.widget_delay_minutes, it) }
     }
 
+    // Top-aligned so the destination and the time share the first line, whether or not a note sits below.
     Row(
-        modifier = GlanceModifier.padding(vertical = 5.dp),
-        verticalAlignment = Alignment.CenterVertically,
+        modifier = GlanceModifier.fillMaxWidth().padding(vertical = 6.dp),
+        verticalAlignment = Alignment.Top,
     ) {
         Box(
-            modifier = GlanceModifier.background(
-                badgeColor,
-            ).cornerRadius(6.dp).padding(horizontal = 7.dp, vertical = 2.dp),
+            modifier = GlanceModifier.padding(top = 1.dp),
         ) {
-            Text(
-                text = departure.lineName,
-                style = TextStyle(color = ColorProvider(badgeText), fontSize = 14.sp, fontWeight = FontWeight.Bold),
-            )
+            Box(
+                modifier = GlanceModifier.background(badgeColor).cornerRadius(6.dp)
+                    .padding(horizontal = 8.dp, vertical = 2.dp),
+            ) {
+                Text(
+                    text = departure.lineName,
+                    style = TextStyle(
+                        color = ColorProvider(badgeText),
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                    ),
+                )
+            }
         }
-        Spacer(GlanceModifier.width(10.dp))
+        Spacer(GlanceModifier.width(ROW_GAP))
         Column(modifier = GlanceModifier.defaultWeight()) {
             Text(
                 text = departure.destination,
                 maxLines = 1,
-                style = TextStyle(color = TextPrimary, fontSize = 15.sp, fontWeight = FontWeight.Medium),
+                style = TextStyle(color = TextPrimary, fontSize = 16.sp, fontWeight = FontWeight.Medium),
             )
             note?.let { Text(text = it, maxLines = 1, style = TextStyle(color = TextMuted, fontSize = 11.sp)) }
         }
-        Text(
-            text = clockWithRealtimeMarker(departure, zone),
-            style = TextStyle(
-                color = if (item.isStale) TextMuted else TextPrimary,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-            ),
-        )
+        Spacer(GlanceModifier.width(ROW_GAP))
+        Column(horizontalAlignment = Alignment.End) {
+            Text(
+                text = clockWithRealtimeMarker(departure, zone),
+                style = TextStyle(
+                    color = if (item.isStale) TextMuted else TextPrimary,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                ),
+            )
+            // Decorative: the line and destination already say everything the picture does.
+            Image(
+                provider = ImageProvider(vehicleArt(departure)),
+                contentDescription = null,
+                colorFilter = ColorFilter.tint(TextMuted),
+                modifier = GlanceModifier.padding(top = 3.dp).size(width = 30.dp, height = 12.dp),
+            )
+        }
     }
 }
 

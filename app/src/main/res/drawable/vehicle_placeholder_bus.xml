@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generic side-profile bus, single colour so the widget can tint it. Placeholder until the exact
+     vehicle illustrations exist (see VehicleArt.kt). Windows and door are holes (evenOdd). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="20dp"
+    android:viewportWidth="48"
+    android:viewportHeight="20">
+    <path
+        android:fillColor="#000000"
+        android:fillType="evenOdd"
+        android:pathData="M5,2 H43 C44.7,2 46,3.3 46,5 V15 H2 V5 C2,3.3 3.3,2 5,2 Z
+            M6,5 H12 V9 H6 Z
+            M14,5 H20 V9 H14 Z
+            M22,5 H28 V9 H22 Z
+            M30,5 H36 V9 H30 Z
+            M38,5 H43 V13 H38 Z
+            M9.8,17.5 A2.2,2.2 0 1,0 14.2,17.5 A2.2,2.2 0 1,0 9.8,17.5 Z
+            M33.8,17.5 A2.2,2.2 0 1,0 38.2,17.5 A2.2,2.2 0 1,0 33.8,17.5 Z" />
+</vector>
