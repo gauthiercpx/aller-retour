@@ -7,8 +7,8 @@ Same flow as larouedugras: GitHub Actions builds the image into GHCR, records th
 - `/readyz` is the readiness probe, so the pod has no Service endpoints until
   `PRIM_API_KEY` exists. STAR-only use needs a placeholder value. The variable is `optional`,
   so the pod still starts and stays live before the secret exists.
-- Nothing is public. The Tailscale Ingress (`tailscale-ingress.yaml`) is not in the
-  kustomization because the Tailscale operator is not installed on the cluster yet.
+- Nothing is public. The backend is exposed only on the tailnet through the Tailscale
+  operator (`tailscale-ingress.yaml`), with HTTPS on `round-trip.<tailnet>.ts.net`.
 
 ## One-time setup
 
@@ -38,8 +38,10 @@ Same flow as larouedugras: GitHub Actions builds the image into GHCR, records th
     curl localhost:8080/healthz
     curl 'localhost:8080/departures?stops=star-metro:5074'
 
-Once the Tailscale operator exists, add `tailscale-ingress.yaml` back to the kustomization and
-use `https://round-trip.<tailnet>.ts.net`; that HTTPS address is what the Android app needs.
+Over the tailnet use `https://round-trip.<tailnet>.ts.net`; that HTTPS address is what the
+Android app needs. The ingress status shows the exact name:
+
+    kubectl -n round-trip get ingress
 
 ## Local image check
 
