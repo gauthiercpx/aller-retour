@@ -9,6 +9,7 @@ import retrofit2.HttpException
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Query
 import java.io.IOException
 import javax.inject.Inject
@@ -16,7 +17,10 @@ import javax.inject.Singleton
 
 internal interface DeparturesApi {
     @GET("departures")
-    suspend fun departures(@Query("stops") stops: String): DeparturesResponse
+    suspend fun departures(
+        @Header("Authorization") authorization: String?,
+        @Query("stops") stops: String,
+    ): DeparturesResponse
 }
 
 @Singleton
@@ -27,12 +31,13 @@ class RetrofitDeparturesSource @Inject constructor(private val client: OkHttpCli
 
     // One throw per failure kind keeps the boundary mapping explicit.
     @Suppress("ThrowsCount")
-    override suspend fun fetch(baseUrl: String, stops: List<String>): DeparturesResponse {
+    override suspend fun fetch(baseUrl: String, apiToken: String, stops: List<String>): DeparturesResponse {
         val api = apiFor(baseUrl)
         try {
-            return api.departures(stops.joinToString(","))
+            val authorization = apiToken.takeIf { it.isNotBlank() }?.let { "Bearer $it" }
+            return api.departures(authorization, stops.joinToString(","))
         } catch (e: HttpException) {
-            throw BackendException("Backend answered HTTP ${e.code()}", e)
+            throw BackendException(httpErrorMessage(e.code()), e)
         } catch (e: IOException) {
             throw BackendException("Backend unreachable: ${e.message}", e)
         } catch (e: SerializationException) {
@@ -57,3 +62,8 @@ class RetrofitDeparturesSource @Inject constructor(private val client: OkHttpCli
         return api
     }
 }
+
+private const val HTTP_UNAUTHORIZED = 401
+
+private fun httpErrorMessage(code: Int): String =
+    if (code == HTTP_UNAUTHORIZED) "Backend refused the API token (HTTP 401)" else "Backend answered HTTP $code"

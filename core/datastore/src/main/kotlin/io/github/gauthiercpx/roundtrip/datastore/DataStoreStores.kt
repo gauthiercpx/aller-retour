@@ -13,6 +13,7 @@ import kotlinx.serialization.json.Json
 import javax.inject.Inject
 
 private val BASE_URL = stringPreferencesKey("base_url")
+private val API_TOKEN = stringPreferencesKey("api_token")
 private val MORNING_STOPS = stringPreferencesKey("morning_stops")
 private val EVENING_STOPS = stringPreferencesKey("evening_stops")
 private val CACHED_DEPARTURES = stringPreferencesKey("cached_departures")
@@ -21,6 +22,7 @@ class DataStoreSettingsStore @Inject constructor(private val dataStore: DataStor
     override val settings: Flow<UserSettings> = dataStore.data.map { prefs ->
         UserSettings(
             baseUrl = prefs[BASE_URL].orEmpty(),
+            apiToken = prefs[API_TOKEN].orEmpty(),
             plan = StopPlan(
                 morning = prefs[MORNING_STOPS].toStopList(),
                 evening = prefs[EVENING_STOPS].toStopList(),
@@ -31,6 +33,7 @@ class DataStoreSettingsStore @Inject constructor(private val dataStore: DataStor
     override suspend fun save(settings: UserSettings) {
         dataStore.edit { prefs ->
             prefs[BASE_URL] = settings.baseUrl
+            prefs[API_TOKEN] = settings.apiToken
             prefs[MORNING_STOPS] = settings.plan.morning.joinToString(",")
             prefs[EVENING_STOPS] = settings.plan.evening.joinToString(",")
         }

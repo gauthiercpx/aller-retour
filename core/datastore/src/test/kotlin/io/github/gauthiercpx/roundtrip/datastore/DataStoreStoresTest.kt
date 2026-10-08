@@ -37,6 +37,7 @@ class DataStoreStoresTest {
         val store = DataStoreSettingsStore(newDataStore())
         val settings = UserSettings(
             baseUrl = "https://rt.example/",
+            apiToken = "tok+en/=",
             plan = StopPlan(morning = listOf("idfm:1", "idfm:2"), evening = listOf("star-metro:3")),
         )
 

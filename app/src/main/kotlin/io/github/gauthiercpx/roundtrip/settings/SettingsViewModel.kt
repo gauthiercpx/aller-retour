@@ -14,6 +14,7 @@ import io.github.gauthiercpx.roundtrip.datastore.SettingsStore
 import io.github.gauthiercpx.roundtrip.datastore.UserSettings
 import io.github.gauthiercpx.roundtrip.domain.StopListParse
 import io.github.gauthiercpx.roundtrip.domain.StopPlan
+import io.github.gauthiercpx.roundtrip.domain.normalizeApiToken
 import io.github.gauthiercpx.roundtrip.domain.normalizeBackendUrl
 import io.github.gauthiercpx.roundtrip.domain.parseStopList
 import io.github.gauthiercpx.roundtrip.widget.DeparturesWidget
@@ -27,9 +28,11 @@ import javax.inject.Inject
 
 data class SettingsUiState(
     val baseUrl: String = "",
+    val apiToken: String = "",
     val morningStops: String = "",
     val eveningStops: String = "",
     val isBaseUrlInvalid: Boolean = false,
+    val isApiTokenInvalid: Boolean = false,
     val morningStopsError: String? = null,
     val eveningStopsError: String? = null,
     val isBusy: Boolean = false,
@@ -58,6 +61,7 @@ class SettingsViewModel @Inject constructor(
             mutableState.update {
                 it.copy(
                     baseUrl = saved.baseUrl,
+                    apiToken = saved.apiToken,
                     morningStops = saved.plan.morning.joinToString(", "),
                     eveningStops = saved.plan.evening.joinToString(", "),
                 )
@@ -66,6 +70,8 @@ class SettingsViewModel @Inject constructor(
     }
 
     fun onBaseUrlChange(value: String) = mutableState.update { it.copy(baseUrl = value, isBaseUrlInvalid = false) }
+
+    fun onApiTokenChange(value: String) = mutableState.update { it.copy(apiToken = value, isApiTokenInvalid = false) }
 
     fun onMorningStopsChange(value: String) =
         mutableState.update { it.copy(morningStops = value, morningStopsError = null) }
@@ -76,13 +82,17 @@ class SettingsViewModel @Inject constructor(
     fun saveAndRefresh() {
         val current = mutableState.value
         val baseUrl = current.baseUrl.takeIf { it.isBlank() } ?: normalizeBackendUrl(current.baseUrl)
+        val apiToken = normalizeApiToken(current.apiToken)
         val morning = parseStopList(current.morningStops)
         val evening = parseStopList(current.eveningStops)
 
-        if (baseUrl == null || morning is StopListParse.Invalid || evening is StopListParse.Invalid) {
+        val hasInvalidStops = morning is StopListParse.Invalid || evening is StopListParse.Invalid
+
+        if (baseUrl == null || apiToken == null || hasInvalidStops) {
             mutableState.update {
                 it.copy(
                     isBaseUrlInvalid = baseUrl == null,
+                    isApiTokenInvalid = apiToken == null,
                     morningStopsError = (morning as? StopListParse.Invalid)?.message,
                     eveningStopsError = (evening as? StopListParse.Invalid)?.message,
                 )
@@ -96,7 +106,7 @@ class SettingsViewModel @Inject constructor(
                 morning = (morning as StopListParse.Valid).stops,
                 evening = (evening as StopListParse.Valid).stops,
             )
-            settingsStore.save(UserSettings(baseUrl = baseUrl, plan = plan))
+            settingsStore.save(UserSettings(baseUrl = baseUrl, apiToken = apiToken, plan = plan))
             val status = when (val result = repository.refresh()) {
                 RefreshResult.Success -> SettingsStatus.Message(R.string.settings_status_refreshed)
                 RefreshResult.NotConfigured -> SettingsStatus.Message(R.string.settings_status_saved_not_configured)
