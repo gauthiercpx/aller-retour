@@ -4,6 +4,7 @@ import io.github.gauthiercpx.roundtrip.model.DeparturesResponse
 import io.github.gauthiercpx.roundtrip.model.StopState
 import io.github.gauthiercpx.roundtrip.server.cache.TtlCache
 import io.github.gauthiercpx.roundtrip.server.ratelimit.TokenBucket
+import io.github.gauthiercpx.roundtrip.server.reference.NoLineColors
 import io.github.gauthiercpx.roundtrip.server.upstream.prim.PrimClient
 import io.github.gauthiercpx.roundtrip.server.upstream.star.StarClient
 import io.ktor.client.HttpClient
@@ -67,6 +68,7 @@ class RoutesTest {
         service: DepartureService = DepartureService.create(
             PrimClient(fake.client, appConfig.primApiKey),
             StarClient(fake.client),
+            NoLineColors,
             clock,
         ),
     ) {
@@ -231,6 +233,7 @@ class RoutesTest {
                     ),
                 ),
                 clock = clock,
+                lineColors = NoLineColors,
             ),
         )
         authed().get("/departures?stops=idfm:58572")
