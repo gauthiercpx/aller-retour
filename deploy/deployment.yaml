@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: round-trip-backend
+  labels:
+    app.kubernetes.io/name: round-trip-backend
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate   # single user, in-memory cache: no need for surge pods on a mini PC
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: round-trip-backend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: round-trip-backend
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      # Created by hand in the namespace, outside git (see README); same as larouedugras.
+      imagePullSecrets:
+        - name: ghcr-pull
+      containers:
+        - name: server
+          image: ghcr.io/gauthiercpx/round-trip-backend   # tag set by kustomize `images:`
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
+            - name: PRIM_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: round-trip-secrets
+                  key: PRIM_API_KEY
+                  optional: true   # lets the pod start (live, unready) before the secret exists
+          resources:
+            requests:
+              cpu: 50m
+              memory: 192Mi
+            limits:
+              cpu: 500m
+              memory: 384Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+          startupProbe:
+            httpGet: { path: /healthz, port: http }
+            periodSeconds: 3
+            failureThreshold: 30
+          livenessProbe:
+            httpGet: { path: /healthz, port: http }
+            periodSeconds: 20
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet: { path: /readyz, port: http }
+            periodSeconds: 10
+            timeoutSeconds: 3
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 64Mi

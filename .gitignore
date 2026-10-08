@@ -38,3 +38,8 @@ Thumbs.db
 .claude/settings.local.json
 
 .claude/skills/
+# Real Kubernetes secrets (only *.example.yaml is tracked)
+deploy/secret.yaml
+deploy/*.secret.yaml
+deploy/**/secret*.yaml
+!deploy/secret.example.yaml

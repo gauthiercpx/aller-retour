@@ -1,0 +1,26 @@
+# To register the app: copy this file to apps/round-trip.yaml in the homelab repo.
+# It is deliberately not part of the kustomization above.
+#
+# The secrets round-trip-secrets and ghcr-pull are created by hand in the round-trip
+# namespace. ArgoCD does not know them, so it neither replaces them nor prunes them.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: round-trip
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:gauthiercpx/aller-retour.git
+    targetRevision: main
+    path: deploy
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: round-trip
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true
+      - CreateNamespace=true

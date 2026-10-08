@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Set here, not in the manifests, so renaming the namespace is a one-line change.
+namespace: round-trip
+
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml
+  # tailscale-ingress.yaml is NOT listed: it needs the Tailscale operator, which is not
+  # installed on the cluster yet. Add it back here once it is.
+
+images:
+  # The only line CI changes to deploy a new version (workflow backend.yml); ArgoCD sees the
+  # commit and replaces the pod. Rolling back is putting the previous tag back or `git revert`.
+  - name: ghcr.io/gauthiercpx/round-trip-backend
+    newTag: "sha-0000000"
+
+# The secret round-trip-secrets is NOT here: it must not live in git (the repo is public).
+# See secret.example.yaml and README.md.
