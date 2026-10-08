@@ -1,0 +1,10 @@
+**/build/
+.gradle/
+.kotlin/
+.idea/
+*.iml
+.env
+.env.*
+**/secret*.yaml
+Dockerfile
+.dockerignore

@@ -1,0 +1,18 @@
+# Requires the Tailscale Kubernetes operator (NOT installed on this cluster at the
+# time of writing; see README.md). Without the operator this object is inert.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: round-trip-backend
+  annotations:
+    tailscale.com/funnel: "false"   # never expose publicly
+spec:
+  ingressClassName: tailscale
+  defaultBackend:
+    service:
+      name: round-trip-backend
+      port:
+        name: http
+  tls:
+    - hosts:
+        - round-trip   # becomes round-trip.<tailnet>.ts.net with HTTPS
