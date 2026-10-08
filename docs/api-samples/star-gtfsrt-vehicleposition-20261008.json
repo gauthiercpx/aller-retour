@@ -1,0 +1,3698 @@
+{
+ "header": {
+  "gtfsRealtimeVersion": "2.0",
+  "incrementality": "FULL_DATASET",
+  "timestamp": "1791460519"
+ },
+ "entity": [
+  {
+   "id": "220",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493634",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.121586,
+     "longitude": -1.703872,
+     "bearing": 279.0,
+     "speed": 1.3889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1307",
+    "vehicle": {
+     "id": "220",
+     "label": "220"
+    }
+   }
+  },
+  {
+   "id": "228",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17659387",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0032",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.084908,
+     "longitude": -1.676808,
+     "bearing": 185.0,
+     "speed": 6.9444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1622",
+    "vehicle": {
+     "id": "228",
+     "label": "228"
+    }
+   }
+  },
+  {
+   "id": "235",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17659388",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0032",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.114697,
+     "longitude": -1.651971,
+     "bearing": 276.0,
+     "speed": 3.6111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1760",
+    "vehicle": {
+     "id": "235",
+     "label": "235"
+    }
+   }
+  },
+  {
+   "id": "238",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607465",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.1044,
+     "longitude": -1.672477,
+     "bearing": 297.0,
+     "speed": 1.3889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1056",
+    "vehicle": {
+     "id": "238",
+     "label": "238"
+    }
+   }
+  },
+  {
+   "id": "241",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17603379",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0013",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.093674,
+     "longitude": -1.607467,
+     "bearing": 56.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-3016",
+    "vehicle": {
+     "id": "241",
+     "label": "241"
+    }
+   }
+  },
+  {
+   "id": "242",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17595830",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0053",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.12255,
+     "longitude": -1.868195,
+     "bearing": 73.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-4267",
+    "vehicle": {
+     "id": "242",
+     "label": "242"
+    }
+   }
+  },
+  {
+   "id": "246",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17603403",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0013",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.092243,
+     "longitude": -1.702942,
+     "bearing": 11.0,
+     "speed": 0.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2210",
+    "vehicle": {
+     "id": "246",
+     "label": "246"
+    }
+   }
+  },
+  {
+   "id": "247",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17588761",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0010",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.11719,
+     "longitude": -1.634112,
+     "bearing": 337.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1175",
+    "vehicle": {
+     "id": "247",
+     "label": "247"
+    }
+   }
+  },
+  {
+   "id": "248",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17659410",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0032",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.149437,
+     "longitude": -1.676315,
+     "bearing": 296.0,
+     "speed": 9.1667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2848",
+    "vehicle": {
+     "id": "248",
+     "label": "248"
+    }
+   }
+  },
+  {
+   "id": "342",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001913",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.123585,
+     "longitude": -1.603749,
+     "bearing": 93.0,
+     "speed": 8.3333
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2028",
+    "vehicle": {
+     "id": "342",
+     "label": "342"
+    }
+   }
+  },
+  {
+   "id": "343",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817620",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.105927,
+     "longitude": -1.665936,
+     "bearing": 6.0,
+     "speed": 2.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1030",
+    "vehicle": {
+     "id": "343",
+     "label": "343"
+    }
+   }
+  },
+  {
+   "id": "345",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817618",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.104694,
+     "longitude": -1.667469,
+     "bearing": 260.0,
+     "speed": 3.0556
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1057",
+    "vehicle": {
+     "id": "345",
+     "label": "345"
+    }
+   }
+  },
+  {
+   "id": "347",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818193",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0003",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.084354,
+     "longitude": -1.681884,
+     "bearing": 186.0,
+     "speed": 4.4444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1623",
+    "vehicle": {
+     "id": "347",
+     "label": "347"
+    }
+   }
+  },
+  {
+   "id": "348",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817619",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.10441,
+     "longitude": -1.669557,
+     "bearing": 262.0,
+     "speed": 1.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-9115",
+    "vehicle": {
+     "id": "348",
+     "label": "348"
+    }
+   }
+  },
+  {
+   "id": "350",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001914",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.11418,
+     "longitude": -1.612984,
+     "bearing": 92.0,
+     "speed": 6.9444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2022",
+    "vehicle": {
+     "id": "350",
+     "label": "350"
+    }
+   }
+  },
+  {
+   "id": "351",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117059",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.114075,
+     "longitude": -1.635642,
+     "bearing": 92.0,
+     "speed": 2.5
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1610",
+    "vehicle": {
+     "id": "351",
+     "label": "351"
+    }
+   }
+  },
+  {
+   "id": "352",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001894",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.094547,
+     "longitude": -1.665133,
+     "bearing": 244.0,
+     "speed": 1.6667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1571",
+    "vehicle": {
+     "id": "352",
+     "label": "352"
+    }
+   }
+  },
+  {
+   "id": "353",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001892",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.067192,
+     "longitude": -1.722044,
+     "bearing": 215.0,
+     "speed": 1.3889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2243",
+    "vehicle": {
+     "id": "353",
+     "label": "353"
+    }
+   }
+  },
+  {
+   "id": "354",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817623",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.12745,
+     "longitude": -1.640277,
+     "bearing": 236.0,
+     "speed": 8.0556
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1003",
+    "vehicle": {
+     "id": "354",
+     "label": "354"
+    }
+   }
+  },
+  {
+   "id": "360",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818194",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0003",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.093086,
+     "longitude": -1.681905,
+     "bearing": 198.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1127",
+    "vehicle": {
+     "id": "360",
+     "label": "360"
+    }
+   }
+  },
+  {
+   "id": "361",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817624",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.116333,
+     "longitude": -1.670705,
+     "bearing": 95.0,
+     "speed": 3.0556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-9115",
+    "vehicle": {
+     "id": "361",
+     "label": "361"
+    }
+   }
+  },
+  {
+   "id": "362",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493690",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.11635,
+     "longitude": -1.711038,
+     "bearing": 87.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1422",
+    "vehicle": {
+     "id": "362",
+     "label": "362"
+    }
+   }
+  },
+  {
+   "id": "363",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001949",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.08248,
+     "longitude": -1.712015,
+     "bearing": 121.0,
+     "speed": 0.5556
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2263",
+    "vehicle": {
+     "id": "363",
+     "label": "363"
+    }
+   }
+  },
+  {
+   "id": "364",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001934",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.114117,
+     "longitude": -1.625941,
+     "bearing": 272.0,
+     "speed": 10.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2017",
+    "vehicle": {
+     "id": "364",
+     "label": "364"
+    }
+   }
+  },
+  {
+   "id": "367",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817625",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.102318,
+     "longitude": -1.660678,
+     "bearing": 140.0,
+     "speed": 1.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1060",
+    "vehicle": {
+     "id": "367",
+     "label": "367"
+    }
+   }
+  },
+  {
+   "id": "370",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117063",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.114983,
+     "longitude": -1.692138,
+     "bearing": 34.0,
+     "speed": 2.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1194",
+    "vehicle": {
+     "id": "370",
+     "label": "370"
+    }
+   }
+  },
+  {
+   "id": "372",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001893",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.09293,
+     "longitude": -1.703648,
+     "bearing": 136.0,
+     "speed": 8.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2278",
+    "vehicle": {
+     "id": "372",
+     "label": "372"
+    }
+   }
+  },
+  {
+   "id": "374",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117018",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.11947,
+     "longitude": -1.634204,
+     "bearing": 252.0,
+     "speed": 7.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1176",
+    "vehicle": {
+     "id": "374",
+     "label": "374"
+    }
+   }
+  },
+  {
+   "id": "378",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117016",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.104736,
+     "longitude": -1.666773,
+     "bearing": 263.0,
+     "speed": 0.2778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1056",
+    "vehicle": {
+     "id": "378",
+     "label": "378"
+    }
+   }
+  },
+  {
+   "id": "379",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117014",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.131496,
+     "longitude": -1.691787,
+     "bearing": 40.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1302",
+    "vehicle": {
+     "id": "379",
+     "label": "379"
+    }
+   }
+  },
+  {
+   "id": "380",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001933",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.111835,
+     "longitude": -1.645797,
+     "bearing": 252.0,
+     "speed": 0.8333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1700",
+    "vehicle": {
+     "id": "380",
+     "label": "380"
+    }
+   }
+  },
+  {
+   "id": "381",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117020",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.11187,
+     "longitude": -1.645678,
+     "bearing": 252.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1700",
+    "vehicle": {
+     "id": "381",
+     "label": "381"
+    }
+   }
+  },
+  {
+   "id": "382",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001912",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.11447,
+     "longitude": -1.593842,
+     "bearing": 90.0,
+     "speed": 7.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2089",
+    "vehicle": {
+     "id": "382",
+     "label": "382"
+    }
+   }
+  },
+  {
+   "id": "383",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117015",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.11664,
+     "longitude": -1.666358,
+     "bearing": 349.0,
+     "speed": 0.2778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1186",
+    "vehicle": {
+     "id": "383",
+     "label": "383"
+    }
+   }
+  },
+  {
+   "id": "384",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001932",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.104263,
+     "longitude": -1.670715,
+     "bearing": 263.0,
+     "speed": 0.8333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1056",
+    "vehicle": {
+     "id": "384",
+     "label": "384"
+    }
+   }
+  },
+  {
+   "id": "387",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17588759",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0010",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.113354,
+     "longitude": -1.693474,
+     "bearing": 212.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1048",
+    "vehicle": {
+     "id": "387",
+     "label": "387"
+    }
+   }
+  },
+  {
+   "id": "393",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18001948",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0006",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.096706,
+     "longitude": -1.705371,
+     "bearing": 46.0,
+     "speed": 7.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1588",
+    "vehicle": {
+     "id": "393",
+     "label": "393"
+    }
+   }
+  },
+  {
+   "id": "441",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17588760",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0010",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.11916,
+     "longitude": -1.649524,
+     "bearing": 256.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1432",
+    "vehicle": {
+     "id": "441",
+     "label": "441"
+    }
+   }
+  },
+  {
+   "id": "450",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17599730",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0012",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.104233,
+     "longitude": -1.672408,
+     "bearing": 274.0,
+     "speed": 1.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1477",
+    "vehicle": {
+     "id": "450",
+     "label": "450"
+    }
+   }
+  },
+  {
+   "id": "458",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17599682",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0012",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.130993,
+     "longitude": -1.703983,
+     "bearing": 65.0,
+     "speed": 6.1111
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1673",
+    "vehicle": {
+     "id": "458",
+     "label": "458"
+    }
+   }
+  },
+  {
+   "id": "464",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17599678",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0012",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.094967,
+     "longitude": -1.661618,
+     "bearing": 172.0,
+     "speed": 4.7222
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1338",
+    "vehicle": {
+     "id": "464",
+     "label": "464"
+    }
+   }
+  },
+  {
+   "id": "465",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17599680",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0012",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.1047,
+     "longitude": -1.6672,
+     "bearing": 264.0,
+     "speed": 0.2778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1140",
+    "vehicle": {
+     "id": "465",
+     "label": "465"
+    }
+   }
+  },
+  {
+   "id": "470",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17588807",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0010",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.1124,
+     "longitude": -1.693254,
+     "bearing": 348.0,
+     "speed": 5.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1094",
+    "vehicle": {
+     "id": "470",
+     "label": "470"
+    }
+   }
+  },
+  {
+   "id": "473",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17588808",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0010",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.104233,
+     "longitude": -1.713551,
+     "bearing": 264.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1390",
+    "vehicle": {
+     "id": "473",
+     "label": "473"
+    }
+   }
+  },
+  {
+   "id": "492",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17599729",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0012",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.134335,
+     "longitude": -1.693992,
+     "bearing": 223.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1676",
+    "vehicle": {
+     "id": "492",
+     "label": "492"
+    }
+   }
+  },
+  {
+   "id": "502",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17532370",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0034",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.098904,
+     "longitude": -1.621635,
+     "bearing": 349.0,
+     "speed": 6.6667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2035",
+    "vehicle": {
+     "id": "502",
+     "label": "502"
+    }
+   }
+  },
+  {
+   "id": "503",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17532369",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0034",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.13086,
+     "longitude": -1.623018,
+     "bearing": 269.0,
+     "speed": 5.8333
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2113",
+    "vehicle": {
+     "id": "503",
+     "label": "503"
+    }
+   }
+  },
+  {
+   "id": "506",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17559680",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0064",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.137688,
+     "longitude": -1.554575,
+     "bearing": 102.0,
+     "speed": 17.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-4009",
+    "vehicle": {
+     "id": "506",
+     "label": "506"
+    }
+   }
+  },
+  {
+   "id": "507",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17504602",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0901",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.110107,
+     "longitude": -1.656507,
+     "bearing": 89.0,
+     "speed": 5.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-9002",
+    "vehicle": {
+     "id": "507",
+     "label": "507"
+    }
+   }
+  },
+  {
+   "id": "601",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817622",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.132774,
+     "longitude": -1.61986,
+     "bearing": 0.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2140",
+    "vehicle": {
+     "id": "601",
+     "label": "601"
+    }
+   }
+  },
+  {
+   "id": "602",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818216",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0003",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.094357,
+     "longitude": -1.683134,
+     "bearing": 278.0,
+     "speed": 2.2222
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1713",
+    "vehicle": {
+     "id": "602",
+     "label": "602"
+    }
+   }
+  },
+  {
+   "id": "603",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818192",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0003",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.08552,
+     "longitude": -1.676,
+     "bearing": 94.0,
+     "speed": 7.2222
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1509",
+    "vehicle": {
+     "id": "603",
+     "label": "603"
+    }
+   }
+  },
+  {
+   "id": "604",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117013",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.131496,
+     "longitude": -1.691787,
+     "bearing": 40.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1302",
+    "vehicle": {
+     "id": "604",
+     "label": "604"
+    }
+   }
+  },
+  {
+   "id": "605",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493689",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.135605,
+     "longitude": -1.692934,
+     "bearing": 108.0,
+     "speed": 1.3889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2826",
+    "vehicle": {
+     "id": "605",
+     "label": "605"
+    }
+   }
+  },
+  {
+   "id": "613",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607507",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.11824,
+     "longitude": -1.687325,
+     "bearing": 114.0,
+     "speed": 2.2222
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1194",
+    "vehicle": {
+     "id": "613",
+     "label": "613"
+    }
+   }
+  },
+  {
+   "id": "614",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607503",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.09648,
+     "longitude": -1.637005,
+     "bearing": 191.0,
+     "speed": 2.2222
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1072",
+    "vehicle": {
+     "id": "614",
+     "label": "614"
+    }
+   }
+  },
+  {
+   "id": "708",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818755",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.09619,
+     "longitude": -1.63994,
+     "bearing": 131.0,
+     "speed": 6.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1320",
+    "vehicle": {
+     "id": "708",
+     "label": "708"
+    }
+   }
+  },
+  {
+   "id": "710",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817626",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.1043,
+     "longitude": -1.670651,
+     "bearing": 263.0,
+     "speed": 1.6667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-9115",
+    "vehicle": {
+     "id": "710",
+     "label": "710"
+    }
+   }
+  },
+  {
+   "id": "711",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820832",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.08979,
+     "longitude": -1.693144,
+     "bearing": 217.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2228",
+    "vehicle": {
+     "id": "711",
+     "label": "711"
+    }
+   }
+  },
+  {
+   "id": "717",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818813",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.11787,
+     "longitude": -1.676873,
+     "bearing": 228.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1186",
+    "vehicle": {
+     "id": "717",
+     "label": "717"
+    }
+   }
+  },
+  {
+   "id": "719",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493636",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.12717,
+     "longitude": -1.65171,
+     "bearing": 59.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1155",
+    "vehicle": {
+     "id": "719",
+     "label": "719"
+    }
+   }
+  },
+  {
+   "id": "725",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818733",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.107937,
+     "longitude": -1.665858,
+     "bearing": 186.0,
+     "speed": 3.0556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1477",
+    "vehicle": {
+     "id": "725",
+     "label": "725"
+    }
+   }
+  },
+  {
+   "id": "730",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607467",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.099453,
+     "longitude": -1.620808,
+     "bearing": 315.0,
+     "speed": 7.5
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2035",
+    "vehicle": {
+     "id": "730",
+     "label": "730"
+    }
+   }
+  },
+  {
+   "id": "731",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818753",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.105705,
+     "longitude": -1.673629,
+     "bearing": 84.0,
+     "speed": 5.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1477",
+    "vehicle": {
+     "id": "731",
+     "label": "731"
+    }
+   }
+  },
+  {
+   "id": "732",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18117062",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0004",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.10627,
+     "longitude": -1.666007,
+     "bearing": 188.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1477",
+    "vehicle": {
+     "id": "732",
+     "label": "732"
+    }
+   }
+  },
+  {
+   "id": "735",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493687",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.122578,
+     "longitude": -1.657633,
+     "bearing": 128.0,
+     "speed": 4.4444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1033",
+    "vehicle": {
+     "id": "735",
+     "label": "735"
+    }
+   }
+  },
+  {
+   "id": "740",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17595829",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0053",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.118874,
+     "longitude": -1.756835,
+     "bearing": 196.0,
+     "speed": 5.5556
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-3757",
+    "vehicle": {
+     "id": "740",
+     "label": "740"
+    }
+   }
+  },
+  {
+   "id": "741",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818816",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.093025,
+     "longitude": -1.631185,
+     "bearing": 300.0,
+     "speed": 7.5
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1322",
+    "vehicle": {
+     "id": "741",
+     "label": "741"
+    }
+   }
+  },
+  {
+   "id": "744",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17817617",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0002",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.09555,
+     "longitude": -1.637516,
+     "bearing": 203.0,
+     "speed": 5.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1072",
+    "vehicle": {
+     "id": "744",
+     "label": "744"
+    }
+   }
+  },
+  {
+   "id": "745",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493691",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.107277,
+     "longitude": -1.715627,
+     "bearing": 247.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1234",
+    "vehicle": {
+     "id": "745",
+     "label": "745"
+    }
+   }
+  },
+  {
+   "id": "750",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818818",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.086456,
+     "longitude": -1.615474,
+     "bearing": 322.0,
+     "speed": 4.4444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-3037",
+    "vehicle": {
+     "id": "750",
+     "label": "750"
+    }
+   }
+  },
+  {
+   "id": "752",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818814",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.118183,
+     "longitude": -1.672444,
+     "bearing": 255.0,
+     "speed": 5.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1186",
+    "vehicle": {
+     "id": "752",
+     "label": "752"
+    }
+   }
+  },
+  {
+   "id": "902",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820834",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.10509,
+     "longitude": -1.666145,
+     "bearing": 184.0,
+     "speed": 1.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1721",
+    "vehicle": {
+     "id": "902",
+     "label": "902"
+    }
+   }
+  },
+  {
+   "id": "903",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607443",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.104576,
+     "longitude": -1.668199,
+     "bearing": 260.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1056",
+    "vehicle": {
+     "id": "903",
+     "label": "903"
+    }
+   }
+  },
+  {
+   "id": "904",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820817",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.095936,
+     "longitude": -1.66134,
+     "bearing": 64.0,
+     "speed": 0.2778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1477",
+    "vehicle": {
+     "id": "904",
+     "label": "904"
+    }
+   }
+  },
+  {
+   "id": "905",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820818",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.134655,
+     "longitude": -1.652033,
+     "bearing": 14.0,
+     "speed": 8.8889
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1157",
+    "vehicle": {
+     "id": "905",
+     "label": "905"
+    }
+   }
+  },
+  {
+   "id": "908",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820823",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.08605,
+     "longitude": -1.695287,
+     "bearing": 28.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2257",
+    "vehicle": {
+     "id": "908",
+     "label": "908"
+    }
+   }
+  },
+  {
+   "id": "909",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17637273",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0007",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.044647,
+     "longitude": -1.746421,
+     "bearing": 251.0,
+     "speed": 7.7778
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2309",
+    "vehicle": {
+     "id": "909",
+     "label": "909"
+    }
+   }
+  },
+  {
+   "id": "911",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17603378",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0013",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.092045,
+     "longitude": -1.667643,
+     "bearing": 333.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1444",
+    "vehicle": {
+     "id": "911",
+     "label": "911"
+    }
+   }
+  },
+  {
+   "id": "913",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17595836",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0053",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.117695,
+     "longitude": -1.730235,
+     "bearing": 279.0,
+     "speed": 17.2222
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-3760",
+    "vehicle": {
+     "id": "913",
+     "label": "913"
+    }
+   }
+  },
+  {
+   "id": "914",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17637300",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0007",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.024574,
+     "longitude": -1.758517,
+     "bearing": 266.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2304",
+    "vehicle": {
+     "id": "914",
+     "label": "914"
+    }
+   }
+  },
+  {
+   "id": "918",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17603347",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0013",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.08409,
+     "longitude": -1.67991,
+     "bearing": 275.0,
+     "speed": 0.2778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1134",
+    "vehicle": {
+     "id": "918",
+     "label": "918"
+    }
+   }
+  },
+  {
+   "id": "919",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17559663",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0064",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.13151,
+     "longitude": -1.598354,
+     "bearing": 253.0,
+     "speed": 2.5
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2079",
+    "vehicle": {
+     "id": "919",
+     "label": "919"
+    }
+   }
+  },
+  {
+   "id": "921",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17603346",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0013",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.067413,
+     "longitude": -1.721767,
+     "bearing": 219.0,
+     "speed": 0.5556
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2243",
+    "vehicle": {
+     "id": "921",
+     "label": "921"
+    }
+   }
+  },
+  {
+   "id": "923",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818738",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.11598,
+     "longitude": -1.658169,
+     "bearing": 155.0,
+     "speed": 3.0556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1477",
+    "vehicle": {
+     "id": "923",
+     "label": "923"
+    }
+   }
+  },
+  {
+   "id": "924",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818815",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.104725,
+     "longitude": -1.66657,
+     "bearing": 85.0,
+     "speed": 0.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1186",
+    "vehicle": {
+     "id": "924",
+     "label": "924"
+    }
+   }
+  },
+  {
+   "id": "925",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818812",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.12954,
+     "longitude": -1.684073,
+     "bearing": 350.0,
+     "speed": 1.9444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1102",
+    "vehicle": {
+     "id": "925",
+     "label": "925"
+    }
+   }
+  },
+  {
+   "id": "928",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17637272",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0007",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.021362,
+     "longitude": -1.75218,
+     "bearing": 124.0,
+     "speed": 2.7778
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2331",
+    "vehicle": {
+     "id": "928",
+     "label": "928"
+    }
+   }
+  },
+  {
+   "id": "929",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493635",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.137543,
+     "longitude": -1.687275,
+     "bearing": 289.0,
+     "speed": 5.8333
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2803",
+    "vehicle": {
+     "id": "929",
+     "label": "929"
+    }
+   }
+  },
+  {
+   "id": "930",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818746",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.14744,
+     "longitude": -1.68616,
+     "bearing": 270.0,
+     "speed": 4.7222
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2813",
+    "vehicle": {
+     "id": "930",
+     "label": "930"
+    }
+   }
+  },
+  {
+   "id": "931",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820824",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.09358,
+     "longitude": -1.67117,
+     "bearing": 99.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1477",
+    "vehicle": {
+     "id": "931",
+     "label": "931"
+    }
+   }
+  },
+  {
+   "id": "932",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17637274",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0007",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.09224,
+     "longitude": -1.702591,
+     "bearing": 33.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-2281",
+    "vehicle": {
+     "id": "932",
+     "label": "932"
+    }
+   }
+  },
+  {
+   "id": "933",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820833",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.1043,
+     "longitude": -1.670395,
+     "bearing": 265.0,
+     "speed": 1.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1721",
+    "vehicle": {
+     "id": "933",
+     "label": "933"
+    }
+   }
+  },
+  {
+   "id": "934",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820835",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.106144,
+     "longitude": -1.665982,
+     "bearing": 190.0,
+     "speed": 2.2222
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1721",
+    "vehicle": {
+     "id": "934",
+     "label": "934"
+    }
+   }
+  },
+  {
+   "id": "938",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17818817",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0001",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.087055,
+     "longitude": -1.616267,
+     "bearing": 322.0,
+     "speed": 5.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-3037",
+    "vehicle": {
+     "id": "938",
+     "label": "938"
+    }
+   }
+  },
+  {
+   "id": "942",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17637299",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0007",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.054504,
+     "longitude": -1.73589,
+     "bearing": 330.0,
+     "speed": 4.1667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-2239",
+    "vehicle": {
+     "id": "942",
+     "label": "942"
+    }
+   }
+  },
+  {
+   "id": "944",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607506",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.103897,
+     "longitude": -1.650374,
+     "bearing": 67.0,
+     "speed": 8.3333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1246",
+    "vehicle": {
+     "id": "944",
+     "label": "944"
+    }
+   }
+  },
+  {
+   "id": "946",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607442",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.11672,
+     "longitude": -1.690677,
+     "bearing": 214.0,
+     "speed": 2.2222
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1217",
+    "vehicle": {
+     "id": "946",
+     "label": "946"
+    }
+   }
+  },
+  {
+   "id": "950",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17603402",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0013",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.08612,
+     "longitude": -1.614786,
+     "bearing": 53.0,
+     "speed": 0.8333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-3003",
+    "vehicle": {
+     "id": "950",
+     "label": "950"
+    }
+   }
+  },
+  {
+   "id": "952",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607505",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.104717,
+     "longitude": -1.664928,
+     "bearing": 92.0,
+     "speed": 0.8333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1243",
+    "vehicle": {
+     "id": "952",
+     "label": "952"
+    }
+   }
+  },
+  {
+   "id": "954",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17820836",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0005",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.13513,
+     "longitude": -1.652829,
+     "bearing": 93.0,
+     "speed": 8.0556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1106",
+    "vehicle": {
+     "id": "954",
+     "label": "954"
+    }
+   }
+  },
+  {
+   "id": "955",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17603348",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0013",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.079796,
+     "longitude": -1.645657,
+     "bearing": 160.0,
+     "speed": 11.6667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-9847",
+    "vehicle": {
+     "id": "955",
+     "label": "955"
+    }
+   }
+  },
+  {
+   "id": "956",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17607508",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0011",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.10992,
+     "longitude": -1.692805,
+     "bearing": 7.0,
+     "speed": 1.3889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-1194",
+    "vehicle": {
+     "id": "956",
+     "label": "956"
+    }
+   }
+  },
+  {
+   "id": "957",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493688",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0014",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.134354,
+     "longitude": -1.658564,
+     "bearing": 133.0,
+     "speed": 1.1111
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1159",
+    "vehicle": {
+     "id": "957",
+     "label": "957"
+    }
+   }
+  },
+  {
+   "id": "1001",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17573114",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0077",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.121113,
+     "longitude": -1.702833,
+     "bearing": 78.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-1519",
+    "vehicle": {
+     "id": "1001",
+     "label": "1001"
+    }
+   }
+  },
+  {
+   "id": "1005",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17474668",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0055",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.10498,
+     "longitude": -1.740725,
+     "bearing": 252.0,
+     "speed": 0.2778
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460507",
+    "stopId": "7-3766",
+    "vehicle": {
+     "id": "1005",
+     "label": "1005"
+    }
+   }
+  },
+  {
+   "id": "1010",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17602785",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0065",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.171143,
+     "longitude": -1.788542,
+     "bearing": 8.0,
+     "speed": 14.4444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-3124",
+    "vehicle": {
+     "id": "1010",
+     "label": "1010"
+    }
+   }
+  },
+  {
+   "id": "1012",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17592629",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0050",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.14933,
+     "longitude": -1.578167,
+     "bearing": 352.0,
+     "speed": 3.6111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460507",
+    "stopId": "7-3315",
+    "vehicle": {
+     "id": "1012",
+     "label": "1012"
+    }
+   }
+  },
+  {
+   "id": "1020",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17573091",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0077",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.155598,
+     "longitude": -1.764228,
+     "bearing": 168.0,
+     "speed": 7.2222
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3168",
+    "vehicle": {
+     "id": "1020",
+     "label": "1020"
+    }
+   }
+  },
+  {
+   "id": "1021",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18157264",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0051",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.17232,
+     "longitude": -1.640949,
+     "bearing": 209.0,
+     "speed": 5.2778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2410",
+    "vehicle": {
+     "id": "1021",
+     "label": "1021"
+    }
+   }
+  },
+  {
+   "id": "1022",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17602792",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0065",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.15133,
+     "longitude": -1.773192,
+     "bearing": 111.0,
+     "speed": 5.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3108",
+    "vehicle": {
+     "id": "1022",
+     "label": "1022"
+    }
+   }
+  },
+  {
+   "id": "1023",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17573113",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0077",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.146225,
+     "longitude": -1.770319,
+     "bearing": 21.0,
+     "speed": 4.1667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3175",
+    "vehicle": {
+     "id": "1023",
+     "label": "1023"
+    }
+   }
+  },
+  {
+   "id": "1026",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17491502",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0071",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.209545,
+     "longitude": -1.630066,
+     "bearing": 4.0,
+     "speed": 6.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-4601",
+    "vehicle": {
+     "id": "1026",
+     "label": "1026"
+    }
+   }
+  },
+  {
+   "id": "1031",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17630987",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0082",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.139053,
+     "longitude": -1.772095,
+     "bearing": 137.0,
+     "speed": 20.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-1517",
+    "vehicle": {
+     "id": "1031",
+     "label": "1031"
+    }
+   }
+  },
+  {
+   "id": "1054",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17491852",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0074",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.071533,
+     "longitude": -1.67635,
+     "bearing": 192.0,
+     "speed": 18.0556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-4379",
+    "vehicle": {
+     "id": "1054",
+     "label": "1054"
+    }
+   }
+  },
+  {
+   "id": "1062",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17573973",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0059",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.045094,
+     "longitude": -1.717664,
+     "bearing": 29.0,
+     "speed": 19.4444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2901",
+    "vehicle": {
+     "id": "1062",
+     "label": "1062"
+    }
+   }
+  },
+  {
+   "id": "1067",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17574005",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0059",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.029114,
+     "longitude": -1.752675,
+     "bearing": 11.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-2372",
+    "vehicle": {
+     "id": "1067",
+     "label": "1067"
+    }
+   }
+  },
+  {
+   "id": "1068",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17627098",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0068",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.133396,
+     "longitude": -1.693128,
+     "bearing": 137.0,
+     "speed": 3.3333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-1543",
+    "vehicle": {
+     "id": "1068",
+     "label": "1068"
+    }
+   }
+  },
+  {
+   "id": "1070",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17474684",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0055",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.110863,
+     "longitude": -1.718127,
+     "bearing": 355.0,
+     "speed": 8.6111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-1235",
+    "vehicle": {
+     "id": "1070",
+     "label": "1070"
+    }
+   }
+  },
+  {
+   "id": "2002",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493443",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0062",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.08771,
+     "longitude": -1.644537,
+     "bearing": 273.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3025",
+    "vehicle": {
+     "id": "2002",
+     "label": "2002"
+    }
+   }
+  },
+  {
+   "id": "2003",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17494021",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0073",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.00132,
+     "longitude": -1.59462,
+     "bearing": 357.0,
+     "speed": 3.0556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3834",
+    "vehicle": {
+     "id": "2003",
+     "label": "2003"
+    }
+   }
+  },
+  {
+   "id": "2006",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17474786",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0054",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.101967,
+     "longitude": -1.835799,
+     "bearing": 264.0,
+     "speed": 12.5
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-4654",
+    "vehicle": {
+     "id": "2006",
+     "label": "2006"
+    }
+   }
+  },
+  {
+   "id": "2011",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493442",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0062",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.049248,
+     "longitude": -1.60849,
+     "bearing": 80.0,
+     "speed": 2.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2618",
+    "vehicle": {
+     "id": "2011",
+     "label": "2011"
+    }
+   }
+  },
+  {
+   "id": "2012",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17495843",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0052",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.121838,
+     "longitude": -1.728196,
+     "bearing": 116.0,
+     "speed": 21.6667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-1517",
+    "vehicle": {
+     "id": "2012",
+     "label": "2012"
+    }
+   }
+  },
+  {
+   "id": "2013",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18157321",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0051",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.180958,
+     "longitude": -1.636843,
+     "bearing": 290.0,
+     "speed": 4.4444
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2437",
+    "vehicle": {
+     "id": "2013",
+     "label": "2013"
+    }
+   }
+  },
+  {
+   "id": "2017",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17494138",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0075",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.042297,
+     "longitude": -1.548794,
+     "bearing": 104.0,
+     "speed": 0.8333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3409",
+    "vehicle": {
+     "id": "2017",
+     "label": "2017"
+    }
+   }
+  },
+  {
+   "id": "2025",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489157",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0078",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.16011,
+     "longitude": -1.67706,
+     "bearing": 105.0,
+     "speed": 6.9444
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-2833",
+    "vehicle": {
+     "id": "2025",
+     "label": "2025"
+    }
+   }
+  },
+  {
+   "id": "2026",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-18157322",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0051",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.12944,
+     "longitude": -1.656825,
+     "bearing": 174.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-1723",
+    "vehicle": {
+     "id": "2026",
+     "label": "2026"
+    }
+   }
+  },
+  {
+   "id": "2027",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17631136",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0081",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.216896,
+     "longitude": -1.890439,
+     "bearing": 346.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-6001",
+    "vehicle": {
+     "id": "2027",
+     "label": "2027"
+    }
+   }
+  },
+  {
+   "id": "2028",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17623629",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0052",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.126225,
+     "longitude": -1.693029,
+     "bearing": 257.0,
+     "speed": 3.6111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-1497",
+    "vehicle": {
+     "id": "2028",
+     "label": "2028"
+    }
+   }
+  },
+  {
+   "id": "2042",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17495820",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0052",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.154144,
+     "longitude": -1.836619,
+     "bearing": 275.0,
+     "speed": 5.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3723",
+    "vehicle": {
+     "id": "2042",
+     "label": "2042"
+    }
+   }
+  },
+  {
+   "id": "2045",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489141",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0078",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.12128,
+     "longitude": -1.702916,
+     "bearing": 180.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-1494",
+    "vehicle": {
+     "id": "2045",
+     "label": "2045"
+    }
+   }
+  },
+  {
+   "id": "2054",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17545444",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0076",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.07287,
+     "longitude": -1.848297,
+     "bearing": 242.0,
+     "speed": 6.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3865",
+    "vehicle": {
+     "id": "2054",
+     "label": "2054"
+    }
+   }
+  },
+  {
+   "id": "2055",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17491529",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0070",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.210636,
+     "longitude": -1.591245,
+     "bearing": 199.0,
+     "speed": 5.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3964",
+    "vehicle": {
+     "id": "2055",
+     "label": "2055"
+    }
+   }
+  },
+  {
+   "id": "2058",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17627121",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0068",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.199585,
+     "longitude": -1.734075,
+     "bearing": 340.0,
+     "speed": 13.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-4503",
+    "vehicle": {
+     "id": "2058",
+     "label": "2058"
+    }
+   }
+  },
+  {
+   "id": "2064",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17592656",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0050",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.13224,
+     "longitude": -1.619813,
+     "bearing": 0.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-2138",
+    "vehicle": {
+     "id": "2064",
+     "label": "2064"
+    }
+   }
+  },
+  {
+   "id": "3011",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489988",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0091",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.04701,
+     "longitude": -1.661007,
+     "bearing": 98.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-2719",
+    "vehicle": {
+     "id": "3011",
+     "label": "3011"
+    }
+   }
+  },
+  {
+   "id": "3017",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489985",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0091",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.021114,
+     "longitude": -1.763849,
+     "bearing": 209.0,
+     "speed": 8.3333
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2329",
+    "vehicle": {
+     "id": "3017",
+     "label": "3017"
+    }
+   }
+  },
+  {
+   "id": "3542",
+   "vehicle": {
+    "position": {
+     "latitude": 48.221783,
+     "longitude": -1.80233,
+     "bearing": 347.0,
+     "speed": 0.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "vehicle": {
+     "id": "3542",
+     "label": "3542"
+    }
+   }
+  },
+  {
+   "id": "4003",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17545236",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0067",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.11445,
+     "longitude": -1.592803,
+     "bearing": 55.0,
+     "speed": 6.9444
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-2161",
+    "vehicle": {
+     "id": "4003",
+     "label": "4003"
+    }
+   }
+  },
+  {
+   "id": "4004",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17545241",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0067",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.114613,
+     "longitude": -1.592077,
+     "bearing": 309.0,
+     "speed": 3.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2039",
+    "vehicle": {
+     "id": "4004",
+     "label": "4004"
+    }
+   }
+  },
+  {
+   "id": "4035",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489849",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0072",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.08872,
+     "longitude": -1.674427,
+     "bearing": 0.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-1534",
+    "vehicle": {
+     "id": "4035",
+     "label": "4035"
+    }
+   }
+  },
+  {
+   "id": "4036",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489856",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0072",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.03464,
+     "longitude": -1.698855,
+     "bearing": 94.0,
+     "speed": 8.8889
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2914",
+    "vehicle": {
+     "id": "4036",
+     "label": "4036"
+    }
+   }
+  },
+  {
+   "id": "4037",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489848",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0072",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.028976,
+     "longitude": -1.707948,
+     "bearing": 160.0,
+     "speed": 1.1111
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-2945",
+    "vehicle": {
+     "id": "4037",
+     "label": "4037"
+    }
+   }
+  },
+  {
+   "id": "5001",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17491851",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0074",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 47.99398,
+     "longitude": -1.61312,
+     "bearing": 148.0,
+     "speed": 4.1667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3839",
+    "vehicle": {
+     "id": "5001",
+     "label": "5001"
+    }
+   }
+  },
+  {
+   "id": "5005",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17491663",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0061",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.03078,
+     "longitude": -1.660598,
+     "bearing": 346.0,
+     "speed": 16.1111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2774",
+    "vehicle": {
+     "id": "5005",
+     "label": "5005"
+    }
+   }
+  },
+  {
+   "id": "5006",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17491691",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0061",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.04686,
+     "longitude": -1.660456,
+     "bearing": 139.0,
+     "speed": 1.6667
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2720",
+    "vehicle": {
+     "id": "5006",
+     "label": "5006"
+    }
+   }
+  },
+  {
+   "id": "5007",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17491874",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0074",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.018616,
+     "longitude": -1.670397,
+     "bearing": 286.0,
+     "speed": 15.0
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-1510",
+    "vehicle": {
+     "id": "5007",
+     "label": "5007"
+    }
+   }
+  },
+  {
+   "id": "6001",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17474648",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0055",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.070877,
+     "longitude": -1.922935,
+     "bearing": 276.0,
+     "speed": 15.5556
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-4403",
+    "vehicle": {
+     "id": "6001",
+     "label": "6001"
+    }
+   }
+  },
+  {
+   "id": "6006",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17489140",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0078",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.17617,
+     "longitude": -1.66215,
+     "bearing": 10.0,
+     "speed": 2.5
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2457",
+    "vehicle": {
+     "id": "6006",
+     "label": "6006"
+    }
+   }
+  },
+  {
+   "id": "6026",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17474702",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0055",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.064503,
+     "longitude": -1.881801,
+     "bearing": 140.0,
+     "speed": 18.6111
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-3851",
+    "vehicle": {
+     "id": "6026",
+     "label": "6026"
+    }
+   }
+  },
+  {
+   "id": "6028",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17493482",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0062",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.04628,
+     "longitude": -1.598176,
+     "bearing": 172.0,
+     "speed": 2.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2630",
+    "vehicle": {
+     "id": "6028",
+     "label": "6028"
+    }
+   }
+  },
+  {
+   "id": "6031",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17474787",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0054",
+     "directionId": 0
+    },
+    "position": {
+     "latitude": 48.108288,
+     "longitude": -1.69437,
+     "bearing": 256.0,
+     "speed": 0.0
+    },
+    "currentStatus": "STOPPED_AT",
+    "timestamp": "1791460508",
+    "stopId": "7-1217",
+    "vehicle": {
+     "id": "6031",
+     "label": "6031"
+    }
+   }
+  },
+  {
+   "id": "6038",
+   "vehicle": {
+    "trip": {
+     "tripId": "6_JEUDI-17474753",
+     "scheduleRelationship": "SCHEDULED",
+     "routeId": "7-0054",
+     "directionId": 1
+    },
+    "position": {
+     "latitude": 48.098717,
+     "longitude": -1.788342,
+     "bearing": 196.0,
+     "speed": 7.7778
+    },
+    "currentStatus": "IN_TRANSIT_TO",
+    "timestamp": "1791460508",
+    "stopId": "7-2507",
+    "vehicle": {
+     "id": "6038",
+     "label": "6038"
+    }
+   }
+  }
+ ]
+}
