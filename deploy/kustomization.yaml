@@ -16,7 +16,7 @@ images:
   # The only line CI changes to deploy a new version (workflow backend.yml); ArgoCD sees the
   # commit and replaces the pod. Rolling back is putting the previous tag back or `git revert`.
   - name: ghcr.io/gauthiercpx/round-trip-backend
-    newTag: "sha-8e31b98"
+    newTag: "sha-e8d9b4a"
 
 # The secret round-trip-secrets is NOT here: it must not live in git (the repo is public).
 # See secret.example.yaml and README.md.
