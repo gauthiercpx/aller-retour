@@ -17,6 +17,7 @@ composeStabilityAnalyzer = "0.6.6"
 constraintlayoutCompose = "1.1.1"
 core = "1.19.0"
 coroutines = "1.11.0"
+datastore = "1.2.1"
 desugarJdk = "2.1.5"
 detekt = "2.0.0-alpha.5"
 espressoCore = "3.7.0"
@@ -53,6 +54,7 @@ minSdk = "24"
 mockkVersion = "1.14.11"
 mockwebserver = "5.4.0"
 navigation3 = "1.2.0"
+okhttp = "5.4.0"
 okhttpLogging = "5.4.0"
 paging = "3.5.0"
 palette = "1.0.0"
@@ -102,6 +104,7 @@ androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "u
 androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-core-desugaring = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdk" }
 # androidx.core 1.19.0 merged the core-ktx extensions into androidx.core:core; core-ktx is an empty compatibility artifact.
+androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 # hiltViewModel() lives here since androidx.hilt 1.3.0; hilt-navigation-compose would drag in androidx.navigation.
@@ -167,6 +170,7 @@ leakcanary-android = { group = "com.squareup.leakcanary", name = "leakcanary-and
 mockk = { module = "io.mockk:mockk", version.ref = "mockkVersion" }
 mockk-agent-jvm = { module = "io.mockk:mockk-agent-jvm", version.ref = "mockkVersion" }
 mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockwebserver" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLogging" }
 play-integrity = { group = "com.google.android.play", name = "integrity", version.ref = "playIntegrity" }
 plugin-spotless = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }

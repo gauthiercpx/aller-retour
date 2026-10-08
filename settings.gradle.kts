@@ -30,5 +30,9 @@ dependencyResolutionManagement {
 rootProject.name = "round-trip"
 
 include(":app")
+include(":core:data")
+include(":core:datastore")
+include(":core:domain")
 include(":core:model")
+include(":core:network")
 include(":core:ui")
