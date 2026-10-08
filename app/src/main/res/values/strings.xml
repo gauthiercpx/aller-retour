@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Round Trip</string>
+    <string name="widget_description">Next departures for your commute</string>
+    <string name="widget_empty">No departures yet</string>
+</resources>
