@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generic side-profile train, single colour so the widget can tint it. Placeholder until the exact
+     vehicle illustrations exist (see VehicleArt.kt). Windows are holes (evenOdd). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="20dp"
+    android:viewportWidth="48"
+    android:viewportHeight="20">
+    <path
+        android:fillColor="#000000"
+        android:fillType="evenOdd"
+        android:pathData="M4,3 H36 C41,3 45,6 46,12 V15 H2 V5 C2,3.9 2.9,3 4,3 Z
+            M6,6 H12 V10 H6 Z
+            M15,6 H21 V10 H15 Z
+            M24,6 H30 V10 H24 Z
+            M34,6 H39 L42,10 H34 Z
+            M7.8,17.5 A2.2,2.2 0 1,0 12.2,17.5 A2.2,2.2 0 1,0 7.8,17.5 Z
+            M35.8,17.5 A2.2,2.2 0 1,0 40.2,17.5 A2.2,2.2 0 1,0 35.8,17.5 Z" />
+</vector>
