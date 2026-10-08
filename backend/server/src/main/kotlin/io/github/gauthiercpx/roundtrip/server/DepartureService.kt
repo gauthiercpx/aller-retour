@@ -7,6 +7,8 @@ import io.github.gauthiercpx.roundtrip.model.StopState
 import io.github.gauthiercpx.roundtrip.server.cache.CacheResult
 import io.github.gauthiercpx.roundtrip.server.cache.TtlCache
 import io.github.gauthiercpx.roundtrip.server.ratelimit.TokenBucket
+import io.github.gauthiercpx.roundtrip.server.reference.LineColorSource
+import io.github.gauthiercpx.roundtrip.server.reference.LineKey
 import io.github.gauthiercpx.roundtrip.server.upstream.MissingConfigException
 import io.github.gauthiercpx.roundtrip.server.upstream.RateLimitedException
 import io.github.gauthiercpx.roundtrip.server.upstream.prim.PrimClient
@@ -35,6 +37,7 @@ class GuardedUpstream(
 class DepartureService(
     private val upstreams: Map<StopSource, GuardedUpstream>,
     private val clock: Clock,
+    private val lineColors: LineColorSource,
 ) {
     private val log = LoggerFactory.getLogger(DepartureService::class.java)
 
@@ -50,11 +53,11 @@ class DepartureService(
 
         return when (val result = upstream.departures(stop)) {
             is CacheResult.Fresh ->
-                StopResult(stop.toString(), StopState.FRESH, result.fetchedAt, upcoming(result.value))
+                StopResult(stop.toString(), StopState.FRESH, result.fetchedAt, withColors(upcoming(result.value)))
 
             is CacheResult.Stale -> {
                 logFailure(stop, "serving stale departures", result.cause)
-                StopResult(stop.toString(), StopState.STALE, result.fetchedAt, upcoming(result.value))
+                StopResult(stop.toString(), StopState.STALE, result.fetchedAt, withColors(upcoming(result.value)))
             }
 
             is CacheResult.Missing -> {
@@ -72,6 +75,15 @@ class DepartureService(
             .sortedBy { it.expectedTime }
             .take(MAX_DEPARTURES_PER_STOP)
     }
+
+    /** Fills in the official line colour; a line whose colour is unknown keeps whatever the upstream gave. */
+    private suspend fun withColors(departures: List<Departure>): List<Departure> = coroutineScope {
+        val keys = departures.map { it.lineKey() }.distinct()
+        val colors = keys.map { key -> async { key to lineColors.color(key) } }.awaitAll().toMap()
+        departures.map { it.copy(lineColor = colors[it.lineKey()] ?: it.lineColor) }
+    }
+
+    private fun Departure.lineKey() = LineKey(network, mode, lineId)
 
     // Expected failures (local limiter, missing key, and the IOExceptions: HTTP errors, timeouts, unusable
     // payloads) log one line; anything else, such as a JSON shape change, keeps its stack trace.
@@ -101,7 +113,7 @@ class DepartureService(
         private const val STAR_BURST = 10
         private val STAR_REFILL: Duration = Duration.ofSeconds(2)
 
-        fun create(prim: PrimClient, star: StarClient, clock: Clock): DepartureService {
+        fun create(prim: PrimClient, star: StarClient, lineColors: LineColorSource, clock: Clock): DepartureService {
             val primUpstream = GuardedUpstream(
                 name = PrimClient.UPSTREAM_NAME,
                 limiter = TokenBucket(clock, PRIM_BURST, PRIM_REFILL),
@@ -124,6 +136,7 @@ class DepartureService(
                     StopSource.STAR_BUS to starBus,
                 ),
                 clock = clock,
+                lineColors = lineColors,
             )
         }
     }

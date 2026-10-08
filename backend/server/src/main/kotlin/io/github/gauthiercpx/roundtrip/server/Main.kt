@@ -1,5 +1,6 @@
 package io.github.gauthiercpx.roundtrip.server
 
+import io.github.gauthiercpx.roundtrip.server.reference.OpenDataLineColors
 import io.github.gauthiercpx.roundtrip.server.upstream.prim.PrimClient
 import io.github.gauthiercpx.roundtrip.server.upstream.star.StarClient
 import io.ktor.client.HttpClient
@@ -27,6 +28,7 @@ fun main() {
     val service = DepartureService.create(
         prim = PrimClient(http, config.primApiKey),
         star = StarClient(http),
+        lineColors = OpenDataLineColors(http, Clock.systemUTC()),
         clock = Clock.systemUTC(),
     )
 
