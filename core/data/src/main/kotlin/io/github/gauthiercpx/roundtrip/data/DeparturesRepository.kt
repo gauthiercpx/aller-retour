@@ -41,7 +41,7 @@ class DeparturesRepository @Inject constructor(
         if (baseUrl == null || stops.isEmpty()) return RefreshResult.NotConfigured
 
         return try {
-            cacheStore.save(remote.fetch(baseUrl, stops))
+            cacheStore.save(remote.fetch(baseUrl, settings.apiToken, stops))
             RefreshResult.Success
         } catch (e: BackendException) {
             RefreshResult.Failure(e.message.orEmpty())

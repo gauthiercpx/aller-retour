@@ -4,8 +4,11 @@ import io.github.gauthiercpx.roundtrip.domain.StopPlan
 import io.github.gauthiercpx.roundtrip.model.DeparturesResponse
 import kotlinx.coroutines.flow.Flow
 
-/** [baseUrl] stays blank until the user sets it; the app never ships a backend address. */
-data class UserSettings(val baseUrl: String = "", val plan: StopPlan = StopPlan())
+/**
+ * [baseUrl] and [apiToken] stay blank until the user sets them; the app never ships a backend address or a
+ * token. The token is kept in app-private storage (backups are disabled in the manifest).
+ */
+data class UserSettings(val baseUrl: String = "", val apiToken: String = "", val plan: StopPlan = StopPlan())
 
 interface SettingsStore {
     val settings: Flow<UserSettings>

@@ -39,8 +39,10 @@ class DeparturesRepositoryTest {
 
     private class FakeRemote(var answer: () -> DeparturesResponse) : DeparturesRemoteSource {
         val requests = mutableListOf<Pair<String, List<String>>>()
+        val tokens = mutableListOf<String>()
 
-        override suspend fun fetch(baseUrl: String, stops: List<String>): DeparturesResponse {
+        override suspend fun fetch(baseUrl: String, apiToken: String, stops: List<String>): DeparturesResponse {
+            tokens += apiToken
             requests += baseUrl to stops
             return answer()
         }
@@ -49,6 +51,7 @@ class DeparturesRepositoryTest {
     private val response = DeparturesResponse(Instant.parse("2026-10-08T08:00:00Z"), emptyList())
     private val configured = UserSettings(
         baseUrl = "https://rt.example",
+        apiToken = "tok-123",
         plan = StopPlan(morning = listOf("idfm:1"), evening = listOf("star-metro:2")),
     )
 
@@ -78,6 +81,15 @@ class DeparturesRepositoryTest {
         repository(remote = remote, now = "2026-10-08T07:59:00Z").refresh()
 
         assertEquals(listOf("https://rt.example/" to listOf("idfm:1")), remote.requests)
+    }
+
+    @Test
+    fun refreshSendsTheConfiguredToken() = runTest {
+        val remote = FakeRemote { response }
+
+        repository(remote = remote).refresh()
+
+        assertEquals(listOf("tok-123"), remote.tokens)
     }
 
     @Test

@@ -15,6 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -26,6 +28,7 @@ fun SettingsRoute(viewModel: SettingsViewModel = hiltViewModel()) {
     SettingsScreen(
         state = state,
         onBaseUrlChange = viewModel::onBaseUrlChange,
+        onApiTokenChange = viewModel::onApiTokenChange,
         onMorningStopsChange = viewModel::onMorningStopsChange,
         onEveningStopsChange = viewModel::onEveningStopsChange,
         onSaveAndRefresh = viewModel::saveAndRefresh,
@@ -36,6 +39,7 @@ fun SettingsRoute(viewModel: SettingsViewModel = hiltViewModel()) {
 fun SettingsScreen(
     state: SettingsUiState,
     onBaseUrlChange: (String) -> Unit,
+    onApiTokenChange: (String) -> Unit,
     onMorningStopsChange: (String) -> Unit,
     onEveningStopsChange: (String) -> Unit,
     onSaveAndRefresh: () -> Unit,
@@ -61,6 +65,14 @@ fun SettingsScreen(
             value = state.baseUrl,
             error = if (state.isBaseUrlInvalid) stringResource(R.string.settings_error_base_url) else null,
             onValueChange = onBaseUrlChange,
+        )
+        SettingsField(
+            label = stringResource(R.string.settings_api_token),
+            hint = stringResource(R.string.settings_api_token_hint),
+            value = state.apiToken,
+            error = if (state.isApiTokenInvalid) stringResource(R.string.settings_error_api_token) else null,
+            onValueChange = onApiTokenChange,
+            isSecret = true,
         )
         SettingsField(
             label = stringResource(R.string.settings_morning_stops),
@@ -102,6 +114,7 @@ private fun SettingsField(
     value: String,
     error: String?,
     onValueChange: (String) -> Unit,
+    isSecret: Boolean = false,
 ) {
     OutlinedTextField(
         value = value,
@@ -109,6 +122,8 @@ private fun SettingsField(
         label = { Text(label) },
         placeholder = { Text(hint) },
         isError = error != null,
+        singleLine = isSecret,
+        visualTransformation = if (isSecret) PasswordVisualTransformation() else VisualTransformation.None,
         supportingText = error?.let { { Text(it) } },
         modifier = Modifier.fillMaxWidth(),
     )

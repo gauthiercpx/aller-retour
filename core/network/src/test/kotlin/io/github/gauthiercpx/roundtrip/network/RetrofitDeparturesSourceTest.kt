@@ -66,7 +66,7 @@ class RetrofitDeparturesSourceTest {
     fun decodesTheBackendResponse() = runTest {
         server.enqueue(MockResponse().setBody(Json.encodeToString(DeparturesResponse.serializer(), response)))
 
-        val result = source.fetch(baseUrl, listOf("idfm:58572"))
+        val result = source.fetch(baseUrl, "", listOf("idfm:58572"))
 
         assertEquals(response, result)
     }
@@ -75,7 +75,7 @@ class RetrofitDeparturesSourceTest {
     fun sendsStopsAsOneCommaSeparatedQueryParameter() = runTest {
         server.enqueue(MockResponse().setBody(Json.encodeToString(DeparturesResponse.serializer(), response)))
 
-        source.fetch(baseUrl, listOf("idfm:58572", "star-metro:5074"))
+        source.fetch(baseUrl, "", listOf("idfm:58572", "star-metro:5074"))
 
         val request = server.takeRequest()
         assertEquals("/departures", request.requestUrl?.encodedPath)
@@ -88,14 +88,14 @@ class RetrofitDeparturesSourceTest {
             .replaceFirst("{", """{"futureField":1,""")
         server.enqueue(MockResponse().setBody(body))
 
-        assertEquals(response, source.fetch(baseUrl, listOf("idfm:58572")))
+        assertEquals(response, source.fetch(baseUrl, "", listOf("idfm:58572")))
     }
 
     @Test
     fun reportsTheStatusCodeOnHttpErrors() = runTest {
         server.enqueue(MockResponse().setResponseCode(503))
 
-        val error = assertFailsWith<BackendException> { source.fetch(baseUrl, listOf("idfm:58572")) }
+        val error = assertFailsWith<BackendException> { source.fetch(baseUrl, "", listOf("idfm:58572")) }
 
         assertTrue("503" in error.message.orEmpty())
     }
@@ -104,18 +104,45 @@ class RetrofitDeparturesSourceTest {
     fun failsWithBackendExceptionOnMalformedJson() = runTest {
         server.enqueue(MockResponse().setBody("not json"))
 
-        assertFailsWith<BackendException> { source.fetch(baseUrl, listOf("idfm:58572")) }
+        assertFailsWith<BackendException> { source.fetch(baseUrl, "", listOf("idfm:58572")) }
     }
 
     @Test
     fun failsWithBackendExceptionWhenTheServerIsUnreachable() = runTest {
         server.shutdown()
 
-        assertFailsWith<BackendException> { source.fetch(baseUrl, listOf("idfm:58572")) }
+        assertFailsWith<BackendException> { source.fetch(baseUrl, "", listOf("idfm:58572")) }
     }
 
     @Test
     fun failsWithBackendExceptionOnAnInvalidBaseUrl() = runTest {
-        assertFailsWith<BackendException> { source.fetch("not a url", listOf("idfm:58572")) }
+        assertFailsWith<BackendException> { source.fetch("not a url", "", listOf("idfm:58572")) }
+    }
+
+    @Test
+    fun sendsTheTokenAsABearerHeader() = runTest {
+        server.enqueue(MockResponse().setBody(Json.encodeToString(DeparturesResponse.serializer(), response)))
+
+        source.fetch(baseUrl, "tok+en/=", listOf("idfm:58572"))
+
+        assertEquals("Bearer tok+en/=", server.takeRequest().getHeader("Authorization"))
+    }
+
+    @Test
+    fun sendsNoAuthorizationHeaderWhenTheTokenIsBlank() = runTest {
+        server.enqueue(MockResponse().setBody(Json.encodeToString(DeparturesResponse.serializer(), response)))
+
+        source.fetch(baseUrl, "  ", listOf("idfm:58572"))
+
+        assertEquals(null, server.takeRequest().getHeader("Authorization"))
+    }
+
+    @Test
+    fun explainsA401AsARefusedToken() = runTest {
+        server.enqueue(MockResponse().setResponseCode(401))
+
+        val error = assertFailsWith<BackendException> { source.fetch(baseUrl, "wrong", listOf("idfm:58572")) }
+
+        assertTrue("token" in error.message.orEmpty())
     }
 }

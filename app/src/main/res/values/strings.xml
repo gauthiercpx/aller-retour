@@ -9,6 +9,9 @@
     <string name="settings_intro">Add the widget from your home screen, then tell the app where the backend is and which stops to watch.</string>
     <string name="settings_base_url">Backend URL</string>
     <string name="settings_base_url_hint">https://round-trip.your-tailnet.ts.net</string>
+    <string name="settings_api_token">API token (optional)</string>
+    <string name="settings_api_token_hint">Needed for a public address</string>
+    <string name="settings_error_api_token">The token must not contain spaces or line breaks</string>
     <string name="settings_morning_stops">Morning stops (before 12:00)</string>
     <string name="settings_evening_stops">Evening stops (from 12:00)</string>
     <string name="settings_stops_hint">idfm:58572, star-metro:5074</string>

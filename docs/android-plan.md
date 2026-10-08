@@ -160,9 +160,10 @@ Download the `round-trip-debug` artifact (or build locally) and `adb install -r`
 personal device. Do not use `pm clear` or install on any device that is not yours.
 
 ## Open questions
-1. **Reaching the backend from the phone:** Tailscale MagicDNS over plain HTTP, or HTTPS via
-   `tailscale serve`? The answer decides whether we need a network security config. Default
-   assumed: HTTPS, no cleartext exceptions.
+1. **Reaching the backend from the phone:** settled. The phone does not run Tailscale; the
+   backend is published over HTTPS through a Cloudflare tunnel (`round-trip.gauthiercpx.dev`,
+   `/departures` only) and protected by a bearer token typed into the app's settings. Plain
+   `http` is accepted only for `localhost` in debug builds (development through `adb reverse`).
 2. **HTTP client:** the skill's stack is Retrofit + kotlinx.serialization; the backend uses
    Ktor client. Plan assumes Retrofit (skill default); say if you prefer Ktor for symmetry.
 3. **Brand colours:** `StarRed` and `IdfmBlue` in `core/ui` are placeholders until checked
