@@ -37,20 +37,23 @@ Personal Android app (single user, not published) that shows smart home-screen w
   - Run the context/ranking logic and the AI features.
   - Serve the line → vehicle-model mapping table.
 
-### Unified data model (draft)
+### Unified data model
+Implemented in `backend/model` (`Departure.kt`), shared with the app later.
 ```
 Departure {
   network: STAR | IDFM | SNCF
-  stopId, stopName
-  lineId, lineName, lineColor, mode (METRO|RER|TRAIN|TRAM|BUS)
-  direction / destination
-  scheduledTime, expectedTime, delaySeconds
-  status (ON_TIME|DELAYED|CANCELLED)
+  stopId, stopName            // stopId is the request id, e.g. "idfm:58572", "star-metro:5074"
+  lineId, lineName, lineColor?, mode (METRO|RER|TRAIN|TRAM|BUS)
+  direction?, destination     // direction = PRIM DirectionRef ("Aller"/"Retour") or STAR sens ("0"/"1")
+  scheduledTime?, expectedTime, delaySeconds?   // STAR metro gives no schedule, so no delay
+  status (ON_TIME|DELAYED|CANCELLED|UNKNOWN)    // UNKNOWN when the upstream has no status (STAR)
+  isRealtime                  // false for STAR "Applicable" (theoretical) rows
   vehicle { modelId?, confidence (EXACT|PROBABLE|UNKNOWN), length? (SHORT|LONG) }
-  missionCode?   // IDFM RER/Transilien, e.g. "KOVA"
+  missionCode?   // IDFM RER/Transilien, e.g. "VONY"
   alerts[]
 }
 ```
+`GET /departures?stops=…` returns `DeparturesResponse { generatedAt, stops: [StopResult { stopId, state (FRESH|STALE|UNAVAILABLE), fetchedAt?, departures[] }] }`.
 
 ## Commute tracking
 
@@ -104,13 +107,21 @@ AT_HOME → WALKING_TO_STOP → WAITING_AT_STOP → ON_BOARD → TRANSFER → WA
 - May also carry more train-level detail than PRIM. To investigate.
 
 ## OPEN QUESTION #1: vehicle model for RER / Transilien
-SNCF Connect shows which train is coming on the RER. It is **unconfirmed** whether the open PRIM API exposes this.
+SNCF Connect shows which train is coming on the RER. The open PRIM API does **not** expose the rolling-stock model.
 
-Steps:
-1. Call PRIM Prochains Passages for one RER stop I use and dump the **full raw JSON**.
-2. Look for these fields: `VehicleFeatureRef`, `JourneyNote`, `TrainNumbers`, train length or composition, mission code.
-3. Compare with the SNCF API's response for the same departure.
-4. If still unclear, ask PRIM support.
+### Findings (2026-10-08, Magenta, RER E, one call, 65 visits)
+Notes: `docs/api-notes/prim-stop-monitoring.md`. Raw sample: `docs/api-samples/`.
+- **Mission code:** present on every visit, in `JourneyNote[].value` (8 values seen, e.g. VONY, NOCY, TANU). Each maps to one terminus.
+- **Train number:** present on every visit, in `TrainNumbers.TrainNumberRef[]`.
+- **Train length:** `VehicleFeatureRef` was `["longTrain"]` on all 65 visits. It never varied, so it tells nothing yet. No short-train value seen.
+- **Rolling-stock model or composition:** no such field.
+- **Direction:** filter on `DirectionRef` ("Aller" = eastbound). Val de Fontenay never appears as a destination.
+- **Quota:** 1000 calls/day.
+
+Still open:
+1. Does `VehicleFeatureRef` ever vary (other times, disruptions, other lines)?
+2. Does the SNCF API expose the model or composition for the same departure? Not tested: no API access yet.
+3. If still unclear, ask PRIM support.
 
 Fallbacks:
 - Infer the **probable** model from line + mission code + train length, using a lookup table in the backend.

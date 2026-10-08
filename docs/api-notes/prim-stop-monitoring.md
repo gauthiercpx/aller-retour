@@ -5,6 +5,7 @@ Sample: `docs/api-samples/prim-stop-monitoring-magenta-rer-e-20261008.json` (one
 ## Endpoint and auth
 - `GET https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF:StopArea:SP:58572:`
 - Auth: header `apikey: <PRIM_API_KEY>` (worked as-is).
+- TLS: the server accepts **TLS 1.3 only**. A TLS 1.2 handshake is refused with alert 70 `protocol_version` (checked with `openssl s_client`, 2026-10-08). Ktor's CIO client engine fails for this reason; the backend uses the Java engine.
 - Rate limit (seen in response headers): `x-ratelimit-limit-day: 1000`, `ratelimit-limit: 1000`, remaining 999 after the first call. So 1000 calls/day for this key/API, window reset reported by `ratelimit-reset` (43556 s at call time). Per-second/minute limits: not observed.
 - Optional `LineRef` filter (e.g. `STIF:Line::C01729:`): documented, not tested here.
 
