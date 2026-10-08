@@ -1,5 +1,5 @@
-# Requires the Tailscale Kubernetes operator (NOT installed on this cluster at the
-# time of writing; see README.md). Without the operator this object is inert.
+# Requires the Tailscale Kubernetes operator, installed in the `tailscale` namespace.
+# Tailnet only: funnel is disabled, so there is no public route.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

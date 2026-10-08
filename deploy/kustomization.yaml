@@ -8,8 +8,8 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - service.yaml
-  # tailscale-ingress.yaml is NOT listed: it needs the Tailscale operator, which is not
-  # installed on the cluster yet. Add it back here once it is.
+  # Needs the Tailscale Kubernetes operator (installed in the `tailscale` namespace).
+  - tailscale-ingress.yaml
 
 images:
   # The only line CI changes to deploy a new version (workflow backend.yml); ArgoCD sees the
