@@ -1,4 +1,4 @@
-# Aller-Retour: Project Context
+# Round Trip: Project Context
 
 Personal Android app (single user, not published) that shows smart home-screen widgets for public transport in **Rennes (STAR)** and **Paris / Île-de-France (IDFM)**. The widgets pick what to display based on context: city, time of day, weekday, commute direction, and learned habits. Each departure is shown with an illustration of the train or bus model, and tapping a widget opens an animated arrival view.
 
@@ -51,6 +51,34 @@ Departure {
   alerts[]
 }
 ```
+
+## Commute tracking
+
+A commute is modelled as a state machine on the phone:
+
+```
+AT_HOME → WALKING_TO_STOP → WAITING_AT_STOP → ON_BOARD → TRANSFER → WALKING_TO_DEST → ARRIVED
+```
+
+`TRANSFER` loops back through `WAITING_AT_STOP` / `ON_BOARD` as many times as the route needs. The widget content and the live notification are derived from the current state.
+
+### Signals
+- **Geofencing API:** home, work, uni, and the stops I use. Entering or leaving a geofence drives most transitions.
+- **Activity Recognition Transition API:** walking, in vehicle, still. Distinguishes walking to a stop from waiting at it, and boarding from standing on the platform.
+- **Schedule matching while underground:** GPS is unavailable in tunnels, so ON_BOARD progress is inferred from the timetable of the departure I boarded.
+- **Short GPS bursts, only when needed:** for example to confirm arrival at a stop or to resolve an ambiguous transition. No continuous GPS.
+
+### Foreground service
+- A foreground service with a live notification runs **only during an active commute** (from `WALKING_TO_STOP` until `ARRIVED`, or until cancelled). It pushes widget updates.
+- Outside a commute nothing runs beyond geofences, activity transitions, and the periodic WorkManager refresh.
+
+### Privacy
+- Location data stays on the phone. The backend only receives stop IDs (and line or mission identifiers), never coordinates.
+
+### Manual override
+- "I'm on the 8:42" pins the current departure and moves the state to `ON_BOARD`.
+- "Not commuting" stops the foreground service and resets the state to `AT_HOME`.
+- The override always wins over inferred state.
 
 ## Data sources
 
@@ -108,6 +136,11 @@ Fallbacks:
 - Draw original flat side-profile illustrations (Figma / SVG): one template per vehicle family (metro, RER double-deck, tram, bus) with swappable colors.
 - Freely licensed drawings from Wikimedia Commons are OK if each license is checked.
 - **Do not** extract artwork from SNCF Connect or the operators' apps.
+
+## Design
+- **No default Material 3 purple palette.** Do not ship the stock `dynamicColorScheme` / baseline purple theme.
+- Colors are derived from the **STAR red** and the **IDFM blue** line colors. Line colors from the data (`lineColor`) are used as-is for line badges.
+- **No generic card-everything layouts.** Prefer typography, spacing, and line-colored bars or badges over a stack of identical rounded cards.
 
 ## Constraints
 - Single user, personal use, Android only.
